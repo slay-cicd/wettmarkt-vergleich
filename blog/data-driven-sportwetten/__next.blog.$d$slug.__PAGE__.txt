@@ -1,0 +1,60 @@
+1:"$Sreact.fragment"
+2:I[17468,["/_next/static/chunks/035vczpu03mqo.js","/_next/static/chunks/0p4_d2rwz.ky0.js"],""]
+8:I[97801,["/_next/static/chunks/035vczpu03mqo.js","/_next/static/chunks/0p4_d2rwz.ky0.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+3:Td51,<h1>Datengetriebene Sportwetten: Die wichtigsten Datenquellen für Fußball</h1>
+<p>Professionelle Sportwetten-Analysten setzen auf Daten – nicht auf Intuition. Wer die richtigen Quellen kennt und interpretiert, hat einen echten Informationsvorteil. Und diesen Vorteil setzt du am besten auf <a href="https://atlasmarkets.de">Atlas Market</a> ein – wo faire Preise deinen Edge nicht durch Margin auffressen.</p>
+<h2>Die wichtigsten Fußball-Datenquellen</h2>
+<p><strong>1. Understat.com</strong></p>
+<ul>
+<li>Kostenlos, beste kostenlose xG-Quelle</li>
+<li>Bundesliga, Champions League, Top-5 Ligen abgedeckt</li>
+<li>Spieler- und Team-Level xG und xA</li>
+<li>Schuss-Maps für jedes Spiel</li>
+</ul>
+<p><strong>2. FBref.com (StatsBomb powered)</strong></p>
+<ul>
+<li>Tiefste kostenlose Datenbank</li>
+<li>Progressive Passes, Pressures, Defensive Actions</li>
+<li>Spieler-Vergleiche über Positionen hinweg</li>
+<li>Advanced Metrics: PPDA (Pressing-Intensität), Field Tilt</li>
+</ul>
+<p><strong>3. Sofascore.com</strong></p>
+<ul>
+<li>Live-Daten und Statistiken</li>
+<li>Spieler-Ratings in Echtzeit</li>
+<li>Injury-Tracker und Aufstellungs-Prognosen</li>
+<li>Auch gut für Live-Trading-Input auf <a href="https://atlasmarkets.de">Atlas Market</a></li>
+</ul>
+<p><strong>4. Opta/Statsbomb (Premium)</strong></p>
+<ul>
+<li>Professionelle Daten für ernsthafte Analysten</li>
+<li>Sehr teuer, aber umfangreichste Daten</li>
+<li>Setzen viele Medien und Klubs ein</li>
+</ul>
+<p><strong>5. Football-Data.co.uk</strong></p>
+<ul>
+<li>Historische Ergebnisse und Quoten</li>
+<li>Ideal für Modell-Training und Backtesting</li>
+</ul>
+<h2>Wie du Daten in Marktanalyse übersetzt</h2>
+<p><strong>Schritt 1: Eigene Modell-Prognose erstellen</strong>
+Nimm xG-Daten der letzten 10 Spiele beider Teams. Berechne erwartete Tore für dieses Matchup. Konvertiere in Wahrscheinlichkeiten für Heimsieg/Unentschieden/Auswärtssieg.</p>
+<p><strong>Schritt 2: Marktpreis vergleichen</strong>
+Gehe auf <a href="https://atlasmarkets.de">Atlas Market</a>. Ist dein Modell-Preis höher oder niedriger als der Marktpreis?</p>
+<p><strong>Schritt 3: Edge kalkulieren</strong>
+(Modell-Wahrscheinlichkeit / Markt-Preis) - 1 = Edge
+Positiver Edge = Kaufen. Negativer Edge = Nicht handeln (oder short).</p>
+<h2>Die Grenzen von Daten</h2>
+<p>Daten sind rückwärtsgewandt. Sie sagen dir was war – nicht was sein wird. Taktische Anpassungen, Verletzungen, mentale Verfassung – das bringen Daten allein nicht.</p>
+<p><strong>Hybrid-Ansatz:</strong> Nutze Daten als Fundament. Ergänze mit qualitativer Analyse (Pressekonferenzen, Insider-Berichte, eigene Beobachtung). Das Ergebnis ist robuster als rein quantitativ oder rein qualitativ.</p>
+<h2>Der Markt als bester Daten-Aggregator</h2>
+<p>Paradoxerweise ist der Prediction Market selbst ein Daten-Aggregator. Der Kurs auf <a href="https://atlasmarkets.de">Atlas Market</a> ist die Aggregation aller verfügbaren Informationen aller Trader.</p>
+<p>Das bedeutet: Wenn dein Modell fundamental vom Marktpreis abweicht, solltest du kritisch hinterfragen was der Markt weiß, das du nicht weißt. Manchmal ist der Markt falsch – und das ist die Gelegenheit. Manchmal hat der Markt Information die dein Modell nicht hat.</p>
+<p>Dieses Spannungsfeld zwischen eigenem Modell und Marktpreis ist das Herzstück von datengetriebenem Trading auf <a href="https://atlasmarkets.de">Atlas Market</a>.</p>
+0:{"rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Datengetriebene Sportwetten: Die wichtigsten Datenquellen für Fußball\",\"description\":\"Welche Datenquellen nutzen professionelle Sportwetten-Analysten? Von xG über Statsbomb bis zu Atlas Market als Markt-Aggregator – der komplette Überblick.\",\"datePublished\":\"2026-03-12\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Atlas Market\",\"url\":\"https://atlasmarkets.de\"},\"keywords\":\"Sportwetten Daten, Fußball Statistiken, Sportwetten Analyse, Quoten Analyse\",\"inLanguage\":\"de\"}"}}],["$","div",null,{"style":{"background":"linear-gradient(180deg, #0f1628 0%, #0a0f1c 100%)","borderBottom":"1px solid #1e2d4a","padding":"3rem 1.5rem"},"children":["$","div",null,{"style":{"maxWidth":"760px","margin":"0 auto"},"children":[["$","div",null,{"style":{"display":"flex","gap":"0.5rem","alignItems":"center","marginBottom":"1.5rem","fontSize":"0.85rem"},"children":[["$","$L2",null,{"href":"/","style":{"color":"#718096","textDecoration":"none"},"children":"Home"}],["$","span",null,{"style":{"color":"#4a5568"},"children":"/"}],["$","span",null,{"style":{"color":"#718096"},"children":"Blog"}],["$","span",null,{"style":{"color":"#4a5568"},"children":"/"}],["$","span",null,{"style":{"color":"#a0aec0","overflow":"hidden","textOverflow":"ellipsis","whiteSpace":"nowrap","maxWidth":"200px"},"children":"Datengetriebene Sportwetten: Die wichtigsten Datenquellen für Fußball"}]]}],["$","div",null,{"style":{"display":"flex","gap":"0.75rem","alignItems":"center","marginBottom":"1rem","flexWrap":"wrap"},"children":[["$","span",null,{"style":{"background":"rgba(0,255,136,0.12)","color":"#00ff88","padding":"0.25rem 0.75rem","borderRadius":"999px","fontSize":"0.75rem","fontWeight":600,"textTransform":"uppercase"},"children":"Analyse"}],["$","span",null,{"style":{"color":"#4a5568","fontSize":"0.85rem"},"children":"12. März 2026"}],["$","span",null,{"style":{"color":"#4a5568"},"children":"·"}],["$","span",null,{"style":{"color":"#4a5568","fontSize":"0.85rem"},"children":[9," Min. Lesezeit"]}]]}],["$","h1",null,{"style":{"fontSize":"clamp(1.6rem, 4vw, 2.4rem)","fontWeight":900,"lineHeight":1.2,"letterSpacing":"-0.03em","color":"#ffffff","marginBottom":"1rem"},"children":"Datengetriebene Sportwetten: Die wichtigsten Datenquellen für Fußball"}],["$","p",null,{"style":{"fontSize":"1.1rem","color":"#a0aec0","lineHeight":1.7},"children":"Welche Datenquellen nutzen professionelle Sportwetten-Analysten? Von xG über Statsbomb bis zu Atlas Market als Markt-Aggregator – der komplette Überblick."}]]}]}],["$","div",null,{"style":{"maxWidth":"760px","margin":"0 auto","padding":"3rem 1.5rem"},"children":[["$","div",null,{"className":"article-content","dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4","$L5"]}],"$L6"],null,"$L7"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"orhClHnFLWQ9aqbpU7gMC"}
+4:["$","div",null,{"style":{"background":"linear-gradient(135deg, #0f1e3a 0%, #0a1628 100%)","border":"1px solid rgba(0,255,136,0.2)","borderRadius":"12px","padding":"2rem","marginTop":"3rem","textAlign":"center"},"children":[["$","div",null,{"style":{"fontSize":"1.5rem","marginBottom":"0.75rem"},"children":"⚡"}],["$","h3",null,{"style":{"color":"#ffffff","fontWeight":700,"marginBottom":"0.75rem","fontSize":"1.2rem"},"children":"Bereit für echte Prediction Markets?"}],["$","p",null,{"style":{"color":"#a0aec0","marginBottom":"1.25rem","fontSize":"0.95rem"},"children":"Erlebe Bundesliga und Champions League auf Atlas Market – fair, transparent, ohne Buchmacher-Marge."}],["$","a",null,{"href":"https://atlasmarkets.de","target":"_blank","rel":"noopener noreferrer","style":{"background":"#00ff88","color":"#0a0f1c","padding":"0.75rem 2rem","borderRadius":"8px","fontWeight":800,"fontSize":"0.95rem","textDecoration":"none","display":"inline-block"},"children":"Zu atlasmarkets.de →"}]]}]
+5:["$","div",null,{"style":{"marginTop":"2rem","display":"flex","gap":"0.5rem","flexWrap":"wrap"},"children":[["$","span","Sportwetten Daten",{"style":{"background":"#141d35","border":"1px solid #1e2d4a","color":"#718096","padding":"0.25rem 0.75rem","borderRadius":"999px","fontSize":"0.8rem"},"children":"Sportwetten Daten"}],["$","span","Fußball Statistiken",{"style":{"background":"#141d35","border":"1px solid #1e2d4a","color":"#718096","padding":"0.25rem 0.75rem","borderRadius":"999px","fontSize":"0.8rem"},"children":"Fußball Statistiken"}],["$","span","Sportwetten Analyse",{"style":{"background":"#141d35","border":"1px solid #1e2d4a","color":"#718096","padding":"0.25rem 0.75rem","borderRadius":"999px","fontSize":"0.8rem"},"children":"Sportwetten Analyse"}],["$","span","Quoten Analyse",{"style":{"background":"#141d35","border":"1px solid #1e2d4a","color":"#718096","padding":"0.25rem 0.75rem","borderRadius":"999px","fontSize":"0.8rem"},"children":"Quoten Analyse"}]]}]
+6:["$","section",null,{"style":{"background":"#0f1628","borderTop":"1px solid #1e2d4a","padding":"3rem 1.5rem"},"children":["$","div",null,{"style":{"maxWidth":"1200px","margin":"0 auto"},"children":[["$","h2",null,{"style":{"fontSize":"1.4rem","fontWeight":700,"color":"#ffffff","marginBottom":"1.5rem","letterSpacing":"-0.02em"},"children":"Weitere Artikel"}],["$","div",null,{"style":{"display":"grid","gridTemplateColumns":"repeat(auto-fill, minmax(280px, 1fr))","gap":"1.25rem"},"children":[["$","$L2","sportwetten-margin-erklaert",{"href":"/blog/sportwetten-margin-erklaert","style":{"textDecoration":"none"},"children":["$","div",null,{"style":{"background":"#141d35","border":"1px solid #1e2d4a","borderRadius":"10px","padding":"1.25rem"},"children":[["$","span",null,{"style":{"fontSize":"0.75rem","color":"#00ff88","fontWeight":600,"textTransform":"uppercase"},"children":"Grundlagen"}],["$","h3",null,{"style":{"color":"#ffffff","fontWeight":600,"marginTop":"0.5rem","fontSize":"0.95rem","lineHeight":1.4},"children":"Buchmacher-Margin erklärt: Was du wirklich bezahlst wenn du wettest"}]]}]}],["$","$L2","quoten-vergleich-anbieter",{"href":"/blog/quoten-vergleich-anbieter","style":{"textDecoration":"none"},"children":["$","div",null,{"style":{"background":"#141d35","border":"1px solid #1e2d4a","borderRadius":"10px","padding":"1.25rem"},"children":[["$","span",null,{"style":{"fontSize":"0.75rem","color":"#00ff88","fontWeight":600,"textTransform":"uppercase"},"children":"Vergleich"}],["$","h3",null,{"style":{"color":"#ffffff","fontWeight":600,"marginTop":"0.5rem","fontSize":"0.95rem","lineHeight":1.4},"children":"Quoten Vergleich: Welcher Sportwetten-Anbieter bietet die besten Quoten?"}]]}]}],["$","$L2","value-betting-erklaert",{"href":"/blog/value-betting-erklaert","style":{"textDecoration":"none"},"children":["$","div",null,{"style":{"background":"#141d35","border":"1px solid #1e2d4a","borderRadius":"10px","padding":"1.25rem"},"children":[["$","span",null,{"style":{"fontSize":"0.75rem","color":"#00ff88","fontWeight":600,"textTransform":"uppercase"},"children":"Strategie"}],["$","h3",null,{"style":{"color":"#ffffff","fontWeight":600,"marginTop":"0.5rem","fontSize":"0.95rem","lineHeight":1.4},"children":"Value Betting: Wie du systematisch profitable Wetten findest"}]]}]}]]}]]}]}]
+7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
+a:null
