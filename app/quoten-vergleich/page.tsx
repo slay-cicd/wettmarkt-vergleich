@@ -118,51 +118,49 @@ export default function QuotenVergleichPage() {
   return (
     <>
       {/* Hero */}
-      <section style={{ background: 'linear-gradient(135deg, #0a0f1c 0%, #0f1e3a 100%)', padding: '4rem 1.5rem 3rem', borderBottom: '1px solid #1e2d4a' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,255,136,0.1)', border: '1px solid rgba(0,255,136,0.2)', borderRadius: '999px', padding: '0.4rem 1rem', marginBottom: '1.25rem' }}>
-            <span style={{ color: '#00ff88', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.08em' }}>📊 34. SPIELTAG · BUNDESLIGA 2025/26</span>
-          </div>
-          <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.03em', marginBottom: '1rem', color: '#ffffff' }}>
-            Bundesliga<br /><span style={{ color: '#00ff88' }}>Quoten-Vergleich</span>
+      <section style={{ paddingTop: '100px', paddingBottom: '3rem', paddingLeft: '1.25rem', paddingRight: '1.25rem' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <span className="tag-pill" style={{ marginBottom: '1rem', display: 'inline-block' }}>📊 34. Spieltag · Bundesliga 2025/26</span>
+          <h1
+            className="font-serif"
+            style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '1rem', color: '#1A1A1A' }}
+          >
+            Bundesliga Quoten-Vergleich
           </h1>
-          <p style={{ fontSize: '1.05rem', color: '#a0aec0', lineHeight: 1.7, maxWidth: '700px' }}>
+          <p style={{ fontSize: '1.125rem', color: '#6B7280', lineHeight: 1.8, maxWidth: '700px' }}>
             Direkte Gegenüberstellung der Quoten bei allen großen Buchmachers — beste Quote grün markiert. Atlas Market zeigt, wie fairer Markt aussieht.
           </p>
         </div>
       </section>
 
       {/* Tables per match */}
-      <section style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
+      <section style={{ padding: '0 1.25rem 4rem', maxWidth: '1100px', margin: '0 auto' }}>
         {matches.map((match, mi) => (
-          <div key={mi} style={{ marginBottom: '2.5rem', background: '#141d35', border: '1px solid #1e2d4a', borderRadius: '16px', overflow: 'hidden' }}>
+          <div key={mi} style={{ marginBottom: '2rem', background: '#FFFFFF', border: '1px solid #E5E5E0', borderRadius: '12px', overflow: 'hidden' }}>
             {/* Match header */}
-            <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #1e2d4a', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #E5E5E0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', backgroundColor: '#F3F3EE' }}>
               <div>
-                <div style={{ fontSize: '0.78rem', color: '#718096', fontWeight: 600, letterSpacing: '0.06em', marginBottom: '0.25rem' }}>{match.date} · BUNDESLIGA</div>
-                <h2 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff' }}>
-                  {match.home} <span style={{ color: '#718096', fontWeight: 400 }}>vs.</span> {match.away}
+                <div style={{ fontSize: '0.75rem', color: '#9CA3AF', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>{match.date} · Bundesliga</div>
+                <h2 className="font-serif" style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A' }}>
+                  {match.home} <span style={{ color: '#9CA3AF', fontWeight: 400 }}>vs.</span> {match.away}
                 </h2>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem', fontSize: '0.82rem', color: '#718096' }}>
-                <span>🏠 Heimsieg · X Unentschieden · ✈ Auswärtssieg</span>
               </div>
             </div>
 
             {/* Table */}
             <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '580px' }}>
+              <table className="compare-table" style={{ minWidth: '580px' }}>
                 <thead>
-                  <tr style={{ background: '#0f1628' }}>
-                    <th style={{ padding: '0.75rem 1.25rem', textAlign: 'left', color: '#718096', fontWeight: 600, fontSize: '0.8rem', letterSpacing: '0.06em' }}>ANBIETER</th>
-                    <th style={{ padding: '0.75rem 1rem', textAlign: 'center', color: '#718096', fontWeight: 600, fontSize: '0.8rem' }}>🏠 HEIM</th>
-                    <th style={{ padding: '0.75rem 1rem', textAlign: 'center', color: '#718096', fontWeight: 600, fontSize: '0.8rem' }}>X DRAW</th>
-                    <th style={{ padding: '0.75rem 1rem', textAlign: 'center', color: '#718096', fontWeight: 600, fontSize: '0.8rem' }}>✈ AUSWÄRTS</th>
-                    <th style={{ padding: '0.75rem 1rem', textAlign: 'center', color: '#718096', fontWeight: 600, fontSize: '0.8rem' }}>MARGE</th>
+                  <tr>
+                    <th>Anbieter</th>
+                    <th style={{ textAlign: 'center' }}>🏠 Heim</th>
+                    <th style={{ textAlign: 'center' }}>X Unentschieden</th>
+                    <th style={{ textAlign: 'center' }}>✈ Auswärts</th>
+                    <th style={{ textAlign: 'center' }}>Marge</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {bookmakers.map((bm, bi) => {
+                  {bookmakers.map((bm) => {
                     const isAtlas = bm === 'Atlas Market'
                     const home = getBestOdds(matches, bm, mi, 'home')
                     const draw = getBestOdds(matches, bm, mi, 'draw')
@@ -170,34 +168,31 @@ export default function QuotenVergleichPage() {
                     const margin = calcMarginForMatch(match.odds[bm])
 
                     return (
-                      <tr key={bm} style={{
-                        borderTop: '1px solid #1e2d4a',
-                        background: isAtlas ? 'rgba(0,255,136,0.04)' : 'transparent',
-                      }}>
-                        <td style={{ padding: '0.875rem 1.25rem' }}>
+                      <tr key={bm} className={isAtlas ? 'atlas-row' : ''}>
+                        <td>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <span style={{ fontWeight: isAtlas ? 800 : 600, color: isAtlas ? '#00ff88' : '#ffffff', fontSize: '0.95rem' }}>
+                            <span style={{ fontWeight: isAtlas ? 700 : 500, color: isAtlas ? '#16a34a' : '#1A1A1A', fontSize: '0.9375rem' }}>
                               {bm}
                             </span>
-                            {isAtlas && <span style={{ background: 'rgba(0,255,136,0.15)', color: '#00ff88', fontSize: '0.7rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: '999px' }}>0% Marge</span>}
+                            {isAtlas && <span className="tag-pill">0% Marge</span>}
                           </div>
                         </td>
                         {[home, draw, away].map((o, oi) => (
-                          <td key={oi} style={{ padding: '0.875rem 1rem', textAlign: 'center' }}>
-                            <span style={{
-                              fontWeight: 800,
+                          <td key={oi} style={{ textAlign: 'center' }}>
+                            <span className={o.isBest ? 'best-odds' : ''} style={{
+                              fontWeight: o.isBest ? 700 : 400,
                               fontSize: '1rem',
-                              color: o.isBest ? '#00ff88' : (isAtlas ? '#a0e8c8' : '#c8d6e8'),
-                              background: o.isBest ? 'rgba(0,255,136,0.12)' : 'transparent',
-                              padding: o.isBest ? '0.2rem 0.6rem' : '0.2rem 0',
+                              background: o.isBest ? '#DCFCE7' : 'transparent',
+                              padding: o.isBest ? '0.2rem 0.5rem' : '0.2rem 0',
                               borderRadius: o.isBest ? '6px' : '0',
+                              display: 'inline-block',
                             }}>
                               {o.val.toFixed(2)}
                             </span>
                           </td>
                         ))}
-                        <td style={{ padding: '0.875rem 1rem', textAlign: 'center' }}>
-                          <span style={{ fontWeight: 700, fontSize: '0.88rem', color: isAtlas ? '#00ff88' : '#718096' }}>
+                        <td style={{ textAlign: 'center' }}>
+                          <span style={{ fontWeight: 600, fontSize: '0.875rem', color: isAtlas ? '#16a34a' : '#9CA3AF' }}>
                             {isAtlas ? '0.0%' : margin}
                           </span>
                         </td>
@@ -211,24 +206,31 @@ export default function QuotenVergleichPage() {
         ))}
 
         {/* Legend */}
-        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', fontSize: '0.85rem', color: '#718096', padding: '1rem 0' }}>
-          <span><span style={{ background: 'rgba(0,255,136,0.12)', color: '#00ff88', padding: '0.1rem 0.4rem', borderRadius: '4px', fontWeight: 700 }}>2.45</span> = Beste Quote</span>
+        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', fontSize: '0.8125rem', color: '#9CA3AF', padding: '1rem 0' }}>
+          <span><span style={{ background: '#DCFCE7', color: '#16a34a', padding: '0.1rem 0.4rem', borderRadius: '4px', fontWeight: 700 }}>2.45</span> = Beste Quote</span>
           <span>Quoten ohne Garantie · Zuletzt aktualisiert: 05.04.2026</span>
         </div>
       </section>
 
-      {/* CTA + explanation */}
-      <section style={{ background: '#0f1628', borderTop: '1px solid #1e2d4a', padding: '4rem 1.5rem' }}>
-        <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#ffffff', marginBottom: '1rem' }}>Warum Atlas Market immer vorne liegt</h2>
-          <p style={{ color: '#a0aec0', lineHeight: 1.8, marginBottom: '2rem' }}>
-            Andere Buchmacher bieten schlechtere Quoten, weil sie eine Marge einbauen — ihren Profit. Atlas Market ist ein echter Markt: Du wettest gegen andere Nutzer, nicht gegen das Haus. Deshalb sind die Quoten fair und die Marge 0%.
-          </p>
-          <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" style={{ background: '#00ff88', color: '#0a0f1c', padding: '0.85rem 2.5rem', borderRadius: '10px', fontWeight: 800, fontSize: '1rem', textDecoration: 'none', display: 'inline-block' }}>
-            Jetzt zu Atlas Market →
-          </a>
-        </div>
-      </section>
+      {/* CTA */}
+      <div style={{ borderTop: '1px solid #E5E5E0' }}>
+        <section style={{ padding: '4rem 1.25rem', textAlign: 'center', backgroundColor: '#F3F3EE' }}>
+          <div style={{ maxWidth: '680px', margin: '0 auto' }}>
+            <h2
+              className="font-serif"
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, color: '#1A1A1A', marginBottom: '1rem', letterSpacing: '-0.02em' }}
+            >
+              Warum Atlas Market immer vorne liegt
+            </h2>
+            <p style={{ color: '#6B7280', lineHeight: 1.8, marginBottom: '2rem' }}>
+              Andere Buchmacher bieten schlechtere Quoten, weil sie eine Marge einbauen — ihren Profit. Atlas Market ist ein echter Markt: Du wettest gegen andere Nutzer, nicht gegen das Haus. Deshalb sind die Quoten fair und die Marge 0%.
+            </p>
+            <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Jetzt zu Atlas Markets →
+            </a>
+          </div>
+        </section>
+      </div>
     </>
   )
 }

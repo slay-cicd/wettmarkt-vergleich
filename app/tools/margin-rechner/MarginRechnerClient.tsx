@@ -28,18 +28,11 @@ function calcMargin(outcomes: Outcome[]) {
   return { impliedProbs, totalImplied, margin, fairProbs, fairOdds, valid }
 }
 
-function getMarginColor(margin: number) {
-  if (margin <= 1) return '#00ff88'
-  if (margin <= 4) return '#ffd700'
-  if (margin <= 7) return '#ff9500'
-  return '#ff4444'
-}
-
-function getMarginLabel(margin: number) {
-  if (margin <= 1) return 'Sehr fair'
-  if (margin <= 4) return 'Fair'
-  if (margin <= 7) return 'Durchschnittlich'
-  return 'Hoch'
+function getMarginLabel(margin: number): { label: string; color: string; bg: string; border: string } {
+  if (margin <= 1) return { label: 'Sehr fair', color: '#16a34a', bg: '#F0FDF4', border: '#BBF7D0' }
+  if (margin <= 4) return { label: 'Fair', color: '#ca8a04', bg: '#FEFCE8', border: '#FEF08A' }
+  if (margin <= 7) return { label: 'Durchschnittlich', color: '#ea580c', bg: '#FFF7ED', border: '#FED7AA' }
+  return { label: 'Hoch', color: '#dc2626', bg: '#FEF2F2', border: '#FECACA' }
 }
 
 export default function MarginRechnerClient() {
@@ -61,13 +54,6 @@ export default function MarginRechnerClient() {
 
   useEffect(() => {
     setResult(calcMargin(outcomes))
-    // Mixpanel tracking
-    if (typeof window !== 'undefined' && (window as any).mixpanel) {
-      const filled = outcomes.filter(o => o.odds).length
-      if (filled >= 2) {
-        ;(window as any).mixpanel.track('margin_calculator_used', { outcomes_filled: filled })
-      }
-    }
   }, [outcomes])
 
   function updateOdds(index: number, value: string) {
@@ -91,7 +77,7 @@ export default function MarginRechnerClient() {
     setOutcomes(outcomes.filter((_, i) => i !== index))
   }
 
-  const marginColor = result ? getMarginColor(result.margin) : '#a0aec0'
+  const marginInfo = result ? getMarginLabel(result.margin) : null
 
   return (
     <div style={{ maxWidth: '760px', margin: '0 auto' }}>
@@ -105,11 +91,14 @@ export default function MarginRechnerClient() {
             key={opt.key}
             onClick={() => setMarketType(opt.key as '3way' | '2way')}
             style={{
-              padding: '0.5rem 1.25rem', borderRadius: '8px', fontWeight: 600, fontSize: '0.9rem',
+              padding: '0.5rem 1.25rem',
+              borderRadius: '8px',
+              fontWeight: 500,
+              fontSize: '0.875rem',
               border: '1px solid',
-              borderColor: marketType === opt.key ? '#00ff88' : '#1e2d4a',
-              background: marketType === opt.key ? 'rgba(0,255,136,0.1)' : '#141d35',
-              color: marketType === opt.key ? '#00ff88' : '#a0aec0',
+              borderColor: marketType === opt.key ? '#16a34a' : '#E5E5E0',
+              background: marketType === opt.key ? '#F0FDF4' : '#FFFFFF',
+              color: marketType === opt.key ? '#16a34a' : '#6B7280',
               cursor: 'pointer',
               transition: 'all 0.15s',
             }}
@@ -120,37 +109,41 @@ export default function MarginRechnerClient() {
       </div>
 
       {/* Input grid */}
-      <div style={{ background: '#141d35', border: '1px solid #1e2d4a', borderRadius: '16px', padding: '2rem', marginBottom: '1.5rem' }}>
-        <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', marginBottom: '1.25rem' }}>Quoten eingeben</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <div className="tool-result-box" style={{ marginBottom: '1.5rem' }}>
+        <h3 className="font-serif" style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '1.25rem' }}>
+          Quoten eingeben
+        </h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
           {outcomes.map((outcome, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 140px auto', gap: '0.75rem', alignItems: 'center' }}>
               <input
                 type="text"
                 value={outcome.name}
                 onChange={e => updateName(i, e.target.value)}
-                style={{
-                  background: '#0f1628', border: '1px solid #1e2d4a', borderRadius: '8px',
-                  color: '#ffffff', padding: '0.65rem 1rem', fontSize: '0.95rem', outline: 'none',
-                }}
+                className="tool-input"
                 placeholder="Ausgangslage"
               />
               <input
                 type="number"
                 value={outcome.odds}
                 onChange={e => updateOdds(i, e.target.value)}
+                className="tool-input"
                 style={{
-                  background: '#0f1628', border: '1px solid',
-                  borderColor: outcome.odds && parseFloat(outcome.odds) > 1 ? 'rgba(0,255,136,0.4)' : '#1e2d4a',
-                  borderRadius: '8px', color: '#ffffff', padding: '0.65rem 1rem',
-                  fontSize: '1rem', fontWeight: 700, outline: 'none', textAlign: 'right',
+                  textAlign: 'right',
+                  fontWeight: 600,
+                  borderColor: outcome.odds && parseFloat(outcome.odds) > 1 ? '#16a34a' : undefined,
                 }}
                 placeholder="z.B. 2.10"
                 step="0.01"
                 min="1.01"
               />
               {outcomes.length > 2 ? (
-                <button onClick={() => removeOutcome(i)} style={{ background: 'none', border: 'none', color: '#4a5568', cursor: 'pointer', padding: '0.5rem', fontSize: '1.2rem' }}>×</button>
+                <button
+                  onClick={() => removeOutcome(i)}
+                  style={{ background: 'none', border: 'none', color: '#9CA3AF', cursor: 'pointer', padding: '0.5rem', fontSize: '1.25rem', lineHeight: 1 }}
+                >
+                  ×
+                </button>
               ) : (
                 <div style={{ width: '32px' }} />
               )}
@@ -159,38 +152,67 @@ export default function MarginRechnerClient() {
         </div>
         <button
           onClick={addOutcome}
-          style={{ marginTop: '1rem', background: 'none', border: '1px dashed #1e2d4a', borderRadius: '8px', color: '#4a5568', padding: '0.5rem 1.25rem', cursor: 'pointer', fontSize: '0.88rem', width: '100%' }}
+          style={{
+            marginTop: '0.875rem',
+            background: 'none',
+            border: '1px dashed #E5E5E0',
+            borderRadius: '8px',
+            color: '#9CA3AF',
+            padding: '0.5rem 1.25rem',
+            cursor: 'pointer',
+            fontSize: '0.875rem',
+            width: '100%',
+            fontFamily: 'inherit',
+            transition: 'border-color 0.15s',
+          }}
         >
           + Auswahl hinzufügen
         </button>
       </div>
 
       {/* Results */}
-      {result ? (
+      {result && marginInfo ? (
         <div style={{ display: 'grid', gap: '1.25rem' }}>
           {/* Main margin display */}
-          <div style={{ background: '#141d35', border: `1px solid ${marginColor}33`, borderRadius: '16px', padding: '2rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '0.85rem', color: '#718096', marginBottom: '0.5rem', fontWeight: 600, letterSpacing: '0.06em' }}>BUCHMACHER-MARGE</div>
-            <div style={{ fontSize: '3.5rem', fontWeight: 900, color: marginColor, letterSpacing: '-0.03em', lineHeight: 1 }}>
+          <div
+            style={{
+              background: marginInfo.bg,
+              border: `1px solid ${marginInfo.border}`,
+              borderRadius: '12px',
+              padding: '2rem',
+              textAlign: 'center',
+            }}
+          >
+            <div style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: '0.75rem' }}>
+              Buchmacher-Marge
+            </div>
+            <div
+              className="font-serif"
+              style={{ fontSize: '3.5rem', fontWeight: 700, color: marginInfo.color, letterSpacing: '-0.03em', lineHeight: 1 }}
+            >
               {result.margin.toFixed(2)}%
             </div>
-            <div style={{ fontSize: '0.9rem', color: marginColor, marginTop: '0.5rem', fontWeight: 600 }}>
-              {getMarginLabel(result.margin)}
-            </div>
-
-            {/* Atlas Market compare */}
-            <div style={{ marginTop: '1.5rem', background: 'rgba(0,255,136,0.06)', border: '1px solid rgba(0,255,136,0.15)', borderRadius: '12px', padding: '1rem 1.5rem', display: 'inline-block' }}>
-              <span style={{ color: '#a0aec0', fontSize: '0.9rem' }}>
-                Bei <strong style={{ color: '#00ff88' }}>Atlas Market</strong> beträgt die Marge{' '}
-                <strong style={{ color: '#00ff88', fontSize: '1.1rem' }}>0%</strong> — du zahlst nicht für den Buchmacher-Profit.
-              </span>
+            <div style={{ fontSize: '1rem', fontWeight: 600, color: marginInfo.color, marginTop: '0.5rem' }}>
+              {marginInfo.label}
             </div>
           </div>
 
+          {/* Atlas Market compare */}
+          <div className="tool-result-highlight">
+            <p style={{ color: '#1A1A1A', fontSize: '0.9375rem', lineHeight: 1.7 }}>
+              💡 Bei <strong style={{ color: '#16a34a' }}>Atlas Market</strong> beträgt die Marge{' '}
+              <strong style={{ color: '#16a34a', fontSize: '1.1rem' }}>0%</strong> — du zahlst nicht für den Buchmacher-Profit.
+              Bei einer Marge von {result.margin.toFixed(2)}% verlierst du im Durchschnitt{' '}
+              <strong>{result.margin.toFixed(2)} Cent pro 1€</strong> Einsatz.
+            </p>
+          </div>
+
           {/* Outcome breakdown */}
-          <div style={{ background: '#141d35', border: '1px solid #1e2d4a', borderRadius: '16px', padding: '1.5rem' }}>
-            <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', marginBottom: '1.25rem' }}>Wahrscheinlichkeits-Analyse</h3>
-            <div style={{ display: 'grid', gap: '0.875rem' }}>
+          <div className="tool-result-box">
+            <h3 className="font-serif" style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '1.25rem' }}>
+              Wahrscheinlichkeits-Analyse
+            </h3>
+            <div style={{ display: 'grid', gap: '1rem' }}>
               {result.valid.map((outcome, i) => {
                 const impliedPct = (result.impliedProbs[i] * 100).toFixed(1)
                 const fairPct = (result.fairProbs[i] * 100).toFixed(1)
@@ -199,37 +221,30 @@ export default function MarginRechnerClient() {
 
                 return (
                   <div key={i}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.25rem' }}>
-                      <span style={{ fontWeight: 600, color: '#ffffff', fontSize: '0.95rem' }}>{outcome.name}</span>
-                      <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.88rem' }}>
-                        <span style={{ color: '#718096' }}>Impliziert: <strong style={{ color: '#a0aec0' }}>{impliedPct}%</strong></span>
-                        <span style={{ color: '#718096' }}>Fair: <strong style={{ color: '#00ff88' }}>{fairPct}%</strong></span>
-                        <span style={{ color: '#718096' }}>Faire Quote: <strong style={{ color: '#00ff88' }}>{fairOdd}</strong></span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.25rem' }}>
+                      <span style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem' }}>{outcome.name}</span>
+                      <div style={{ display: 'flex', gap: '1rem', fontSize: '0.875rem', flexWrap: 'wrap' }}>
+                        <span style={{ color: '#6B7280' }}>Impliziert: <strong style={{ color: '#4A4A4A' }}>{impliedPct}%</strong></span>
+                        <span style={{ color: '#6B7280' }}>Fair: <strong style={{ color: '#16a34a' }}>{fairPct}%</strong></span>
+                        <span style={{ color: '#6B7280' }}>Faire Quote: <strong style={{ color: '#16a34a' }}>{fairOdd}</strong></span>
                       </div>
                     </div>
-                    {/* Progress bar */}
-                    <div style={{ background: '#0a0f1c', borderRadius: '4px', height: '6px', overflow: 'hidden' }}>
-                      <div style={{ width: `${barWidth}%`, height: '100%', background: 'linear-gradient(90deg, #00ff88, #00cc6a)', borderRadius: '4px', transition: 'width 0.4s ease' }} />
+                    <div style={{ background: '#E5E5E0', borderRadius: '4px', height: '6px', overflow: 'hidden' }}>
+                      <div style={{ width: `${barWidth}%`, height: '100%', background: '#16a34a', borderRadius: '4px', transition: 'width 0.4s ease' }} />
                     </div>
                   </div>
                 )
               })}
             </div>
 
-            <div style={{ marginTop: '1.25rem', paddingTop: '1.25rem', borderTop: '1px solid #1e2d4a', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
-              <span style={{ color: '#718096', fontSize: '0.88rem' }}>Gesamtwahrscheinlichkeit (impliziert)</span>
-              <span style={{ fontWeight: 700, color: '#ffffff', fontSize: '0.95rem' }}>{(result.totalImplied * 100).toFixed(2)}%</span>
+            <div style={{ marginTop: '1.25rem', paddingTop: '1.25rem', borderTop: '1px solid #E5E5E0', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span style={{ color: '#6B7280', fontSize: '0.875rem' }}>Gesamtwahrscheinlichkeit (impliziert)</span>
+              <span style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>{(result.totalImplied * 100).toFixed(2)}%</span>
             </div>
-          </div>
-
-          {/* What it means */}
-          <div style={{ background: 'rgba(255,68,68,0.05)', border: '1px solid rgba(255,68,68,0.15)', borderRadius: '12px', padding: '1.25rem 1.5rem', fontSize: '0.9rem', color: '#a0aec0', lineHeight: 1.7 }}>
-            💡 <strong style={{ color: '#ffffff' }}>Was bedeutet das?</strong> Bei einer Marge von {result.margin.toFixed(2)}% verlierst du im Durchschnitt{' '}
-            <strong style={{ color: '#ff9500' }}>{result.margin.toFixed(2)} Cent pro 1€</strong> Einsatz — unabhängig vom Ergebnis. Bei 0% Marge bekommst du faire Preise direkt vom Markt.
           </div>
         </div>
       ) : (
-        <div style={{ background: '#141d35', border: '1px dashed #1e2d4a', borderRadius: '16px', padding: '3rem', textAlign: 'center', color: '#4a5568' }}>
+        <div style={{ background: '#F3F3EE', border: '1px dashed #E5E5E0', borderRadius: '12px', padding: '3rem', textAlign: 'center', color: '#9CA3AF' }}>
           <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📊</div>
           <p>Gib mindestens 2 Quoten ein, um die Analyse zu starten.</p>
         </div>

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 function calcKelly(bankroll: number, odds: number, trueProbability: number) {
   if (bankroll <= 0 || odds <= 1 || trueProbability <= 0 || trueProbability >= 1) return null
 
-  const b = odds - 1  // net odds
+  const b = odds - 1
   const p = trueProbability
   const q = 1 - p
 
@@ -42,64 +42,56 @@ export default function KellyRechnerClient() {
     const p = parseFloat(prob) / 100
 
     if (!isNaN(b) && !isNaN(o) && !isNaN(p)) {
-      const r = calcKelly(b, o, p)
-      setResult(r)
-
-      if (typeof window !== 'undefined' && (window as any).mixpanel && r) {
-        ;(window as any).mixpanel.track('kelly_calculator_used', {
-          kelly_pct: r.kellyPct?.toFixed(2),
-          has_value: !r.noValue,
-        })
-      }
+      setResult(calcKelly(b, o, p))
     } else {
       setResult(null)
     }
   }, [bankroll, odds, prob])
 
-  const inputStyle = {
-    background: '#0f1628', border: '1px solid #1e2d4a', borderRadius: '8px',
-    color: '#ffffff', padding: '0.75rem 1rem', fontSize: '1rem', outline: 'none',
-    width: '100%', fontWeight: 600,
-  }
-
-  const labelStyle = { display: 'block', color: '#a0aec0', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem', letterSpacing: '0.04em' }
-
   return (
     <div style={{ maxWidth: '760px', margin: '0 auto' }}>
       {/* Inputs */}
-      <div style={{ background: '#141d35', border: '1px solid #1e2d4a', borderRadius: '16px', padding: '2rem', marginBottom: '1.5rem' }}>
-        <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', marginBottom: '1.5rem' }}>Deine Wette</h3>
+      <div className="tool-result-box" style={{ marginBottom: '1.5rem' }}>
+        <h3 className="font-serif" style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '1.5rem' }}>
+          Deine Wette
+        </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.25rem' }}>
           <div>
-            <label style={labelStyle}>BANKROLL (€)</label>
+            <label style={{ display: 'block', color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              Bankroll (€)
+            </label>
             <input
               type="number"
               value={bankroll}
               onChange={e => setBankroll(e.target.value)}
-              style={inputStyle}
+              className="tool-input"
               placeholder="z.B. 1000"
               min="1"
             />
           </div>
           <div>
-            <label style={labelStyle}>ANGEBOTENE QUOTE</label>
+            <label style={{ display: 'block', color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              Angebotene Quote
+            </label>
             <input
               type="number"
               value={odds}
               onChange={e => setOdds(e.target.value)}
-              style={inputStyle}
+              className="tool-input"
               placeholder="z.B. 2.50"
               step="0.01"
               min="1.01"
             />
           </div>
           <div>
-            <label style={labelStyle}>EIGENE WAHRSCHEINLICHKEIT (%)</label>
+            <label style={{ display: 'block', color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, marginBottom: '0.5rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              Eigene Wahrscheinlichkeit (%)
+            </label>
             <input
               type="number"
               value={prob}
               onChange={e => setProb(e.target.value)}
-              style={inputStyle}
+              className="tool-input"
               placeholder="z.B. 45"
               step="0.1"
               min="0.1"
@@ -107,7 +99,7 @@ export default function KellyRechnerClient() {
             />
           </div>
         </div>
-        <p style={{ fontSize: '0.82rem', color: '#4a5568', marginTop: '1rem' }}>
+        <p style={{ fontSize: '0.8125rem', color: '#9CA3AF', marginTop: '1rem' }}>
           💡 Deine geschätzte Wahrscheinlichkeit ist der Kern des Kelly-Kriteriums — schätze sie realistisch.
         </p>
       </div>
@@ -115,64 +107,86 @@ export default function KellyRechnerClient() {
       {/* Results */}
       {result ? (
         result.noValue ? (
-          <div style={{ background: 'rgba(255,68,68,0.07)', border: '1px solid rgba(255,68,68,0.2)', borderRadius: '16px', padding: '2rem', textAlign: 'center' }}>
+          <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: '12px', padding: '2rem', textAlign: 'center' }}>
             <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>❌</div>
-            <h3 style={{ color: '#ff4444', fontWeight: 800, marginBottom: '0.5rem' }}>Kein Value gefunden</h3>
-            <p style={{ color: '#a0aec0' }}>
+            <h3 className="font-serif" style={{ color: '#dc2626', fontWeight: 700, marginBottom: '0.5rem', fontSize: '1.25rem' }}>
+              Kein Value gefunden
+            </h3>
+            <p style={{ color: '#6B7280', lineHeight: 1.7 }}>
               Bei einer Quote von {odds} und deiner geschätzten Wahrscheinlichkeit von {prob}% hat diese Wette einen negativen Erwartungswert.<br />
-              <strong style={{ color: '#ffffff' }}>Kelly-Empfehlung: Nicht wetten.</strong>
+              <strong style={{ color: '#1A1A1A' }}>Kelly-Empfehlung: Nicht wetten.</strong>
             </p>
-            <div style={{ marginTop: '1rem', fontSize: '0.88rem', color: '#718096' }}>
+            <div style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#9CA3AF' }}>
               EV = {(result.expectedValue * 100).toFixed(2)}% pro Euro Einsatz
             </div>
           </div>
         ) : (
           <div style={{ display: 'grid', gap: '1.25rem' }}>
             {/* Kelly percentage */}
-            <div style={{ background: '#141d35', border: '1px solid rgba(0,255,136,0.3)', borderRadius: '16px', padding: '2rem', textAlign: 'center' }}>
-              <div style={{ fontSize: '0.85rem', color: '#718096', marginBottom: '0.5rem', fontWeight: 600, letterSpacing: '0.06em' }}>KELLY-EINSATZ</div>
-              <div style={{ fontSize: '3rem', fontWeight: 900, color: '#00ff88', letterSpacing: '-0.03em', lineHeight: 1 }}>
+            <div className="tool-result-highlight" style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: '0.75rem' }}>
+                Kelly-Einsatz
+              </div>
+              <div
+                className="font-serif"
+                style={{ fontSize: '3rem', fontWeight: 700, color: '#16a34a', letterSpacing: '-0.03em', lineHeight: 1 }}
+              >
                 {result.kellyPct.toFixed(2)}%
               </div>
-              <div style={{ color: '#718096', fontSize: '0.9rem', marginTop: '0.25rem' }}>deiner Bankroll</div>
-              <div style={{ marginTop: '1rem', display: 'inline-block', background: 'rgba(0,255,136,0.08)', border: '1px solid rgba(0,255,136,0.15)', borderRadius: '8px', padding: '0.5rem 1rem', fontSize: '0.88rem', color: '#a0aec0' }}>
-                Erwartungswert: <strong style={{ color: '#00ff88' }}>+{(result.expectedValue * 100).toFixed(2)}%</strong> pro Euro
+              <div style={{ color: '#6B7280', fontSize: '0.9rem', marginTop: '0.25rem' }}>deiner Bankroll</div>
+              <div style={{ marginTop: '1rem', display: 'inline-block', background: '#FFFFFF', border: '1px solid #E5E5E0', borderRadius: '8px', padding: '0.5rem 1rem', fontSize: '0.875rem', color: '#4A4A4A' }}>
+                Erwartungswert: <strong style={{ color: '#16a34a' }}>+{(result.expectedValue * 100).toFixed(2)}%</strong> pro Euro
               </div>
             </div>
 
             {/* Stake options */}
-            <div style={{ background: '#141d35', border: '1px solid #1e2d4a', borderRadius: '16px', padding: '1.5rem' }}>
-              <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', marginBottom: '1.25rem' }}>Einsatz-Empfehlungen</h3>
+            <div className="tool-result-box">
+              <h3 className="font-serif" style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '1.25rem' }}>
+                Einsatz-Empfehlungen
+              </h3>
               <div style={{ display: 'grid', gap: '0.875rem' }}>
                 {[
-                  { label: 'Voll-Kelly (aggressiv)', fraction: '1/1', stake: result.fullStake, winReturn: result.fullReturn, color: '#ff9500', warning: 'Hohes Risiko — nur für Fortgeschrittene' },
-                  { label: 'Halb-Kelly (empfohlen)', fraction: '1/2', stake: result.halfStake, winReturn: result.halfReturn, color: '#00ff88', warning: 'Gutes Risiko/Reward-Verhältnis' },
-                  { label: 'Viertel-Kelly (konservativ)', fraction: '1/4', stake: result.quarterStake, winReturn: result.quarterReturn, color: '#00ccff', warning: 'Sehr sicher, geringere Wachstumsrate' },
+                  { label: 'Voll-Kelly (aggressiv)', stake: result.fullStake, winReturn: result.fullReturn, warning: 'Hohes Risiko — nur für Fortgeschrittene', highlight: false },
+                  { label: 'Halb-Kelly (empfohlen)', stake: result.halfStake, winReturn: result.halfReturn, warning: 'Gutes Risiko/Reward-Verhältnis', highlight: true },
+                  { label: 'Viertel-Kelly (konservativ)', stake: result.quarterStake, winReturn: result.quarterReturn, warning: 'Sehr sicher, geringere Wachstumsrate', highlight: false },
                 ].map(opt => (
-                  <div key={opt.label} style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '1rem', alignItems: 'center', padding: '1rem', background: '#0f1628', borderRadius: '10px', border: `1px solid ${opt.color}22` }}>
+                  <div
+                    key={opt.label}
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr auto',
+                      gap: '1rem',
+                      alignItems: 'center',
+                      padding: '1rem',
+                      background: opt.highlight ? '#F0FDF4' : '#FAFAF7',
+                      borderRadius: '10px',
+                      border: opt.highlight ? '1px solid #BBF7D0' : '1px solid #E5E5E0',
+                    }}
+                  >
                     <div>
-                      <div style={{ fontWeight: 700, color: '#ffffff', fontSize: '0.95rem' }}>{opt.label}</div>
-                      <div style={{ fontSize: '0.8rem', color: '#718096', marginTop: '0.2rem' }}>{opt.warning}</div>
+                      <div style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem' }}>{opt.label}</div>
+                      <div style={{ fontSize: '0.8125rem', color: '#6B7280', marginTop: '0.2rem' }}>{opt.warning}</div>
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                      <div style={{ fontWeight: 800, color: opt.color, fontSize: '1.1rem' }}>{fmtEur(opt.stake)}</div>
-                      <div style={{ fontSize: '0.8rem', color: '#718096' }}>Gewinn: +{fmtEur(opt.winReturn)}</div>
+                      <div style={{ fontWeight: 700, color: opt.highlight ? '#16a34a' : '#1A1A1A', fontSize: '1.125rem' }}>
+                        {fmtEur(opt.stake)}
+                      </div>
+                      <div style={{ fontSize: '0.8125rem', color: '#6B7280' }}>Gewinn: +{fmtEur(opt.winReturn)}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Warning */}
             {result.kellyPct > 20 && (
-              <div style={{ background: 'rgba(255,149,0,0.07)', border: '1px solid rgba(255,149,0,0.2)', borderRadius: '12px', padding: '1rem 1.25rem', fontSize: '0.88rem', color: '#a0aec0' }}>
-                ⚠️ <strong style={{ color: '#ff9500' }}>Hoher Kelly-Wert:</strong> Bei über 20% empfehlen Experten generell den Viertel- oder Halb-Kelly. Vollständige Kelly-Einsätze können das Kapital volatil machen.
+              <div style={{ background: '#FFF7ED', border: '1px solid #FED7AA', borderRadius: '12px', padding: '1rem 1.25rem', fontSize: '0.875rem', color: '#4A4A4A', lineHeight: 1.7 }}>
+                ⚠️ <strong style={{ color: '#ea580c' }}>Hoher Kelly-Wert:</strong> Bei über 20% empfehlen Experten generell den Viertel- oder Halb-Kelly. Vollständige Kelly-Einsätze können das Kapital volatil machen.
               </div>
             )}
           </div>
         )
       ) : (
-        <div style={{ background: '#141d35', border: '1px dashed #1e2d4a', borderRadius: '16px', padding: '3rem', textAlign: 'center', color: '#4a5568' }}>
+        <div style={{ background: '#F3F3EE', border: '1px dashed #E5E5E0', borderRadius: '12px', padding: '3rem', textAlign: 'center', color: '#9CA3AF' }}>
           <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📐</div>
           <p>Fülle alle drei Felder aus, um den optimalen Einsatz zu berechnen.</p>
         </div>

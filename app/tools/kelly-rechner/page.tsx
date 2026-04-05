@@ -10,70 +10,76 @@ export const metadata: Metadata = {
 export default function KellyRechnerPage() {
   return (
     <>
-      <section style={{ background: 'linear-gradient(135deg, #0a0f1c 0%, #0f1e3a 100%)', padding: '4rem 1.5rem 3rem', borderBottom: '1px solid #1e2d4a' }}>
+      <section style={{ paddingTop: '100px', paddingBottom: '3rem', paddingLeft: '1.25rem', paddingRight: '1.25rem' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,255,136,0.1)', border: '1px solid rgba(0,255,136,0.2)', borderRadius: '999px', padding: '0.4rem 1rem', marginBottom: '1.25rem' }}>
-            <span style={{ color: '#00ff88', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.08em' }}>🔧 KOSTENLOSES TOOL</span>
-          </div>
-          <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.03em', marginBottom: '1rem', color: '#ffffff' }}>
-            Kelly-Kriterium<br /><span style={{ color: '#00ff88' }}>Rechner</span>
+          <span className="tag-pill" style={{ marginBottom: '1rem', display: 'inline-block' }}>Kostenloses Tool</span>
+          <h1
+            className="font-serif"
+            style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '1rem', color: '#1A1A1A' }}
+          >
+            Kelly-Kriterium Rechner
           </h1>
-          <p style={{ fontSize: '1.05rem', color: '#a0aec0', lineHeight: 1.7, maxWidth: '600px' }}>
+          <p style={{ fontSize: '1.125rem', color: '#6B7280', lineHeight: 1.8, maxWidth: '600px' }}>
             Das Kelly-Kriterium berechnet mathematisch den optimalen Einsatz für eine Wette — basierend auf deiner eigenen Wahrscheinlichkeitsschätzung. Nie wieder zu viel oder zu wenig setzen.
           </p>
         </div>
       </section>
 
-      <section style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
+      <section style={{ padding: '0 1.25rem 4rem', maxWidth: '900px', margin: '0 auto' }}>
         <KellyRechnerClient />
       </section>
 
-      {/* Explanation */}
-      <section style={{ background: '#0f1628', borderTop: '1px solid #1e2d4a', padding: '4rem 1.5rem' }}>
+      <section style={{ borderTop: '1px solid #E5E5E0', padding: '4rem 1.25rem', backgroundColor: '#F3F3EE' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#ffffff', marginBottom: '1.5rem' }}>Das Kelly-Kriterium erklärt</h2>
+          <h2
+            className="font-serif"
+            style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}
+          >
+            Was ist das Kelly-Kriterium?
+          </h2>
           <div style={{ display: 'grid', gap: '1.5rem' }}>
-            <div style={{ background: '#141d35', border: '1px solid #1e2d4a', borderRadius: '12px', padding: '1.5rem' }}>
-              <h3 style={{ color: '#00ff88', fontWeight: 700, marginBottom: '0.75rem' }}>Die Formel</h3>
-              <div style={{ background: '#0a0f1c', borderRadius: '8px', padding: '1rem', fontFamily: 'monospace', fontSize: '0.95rem', color: '#00ff88', textAlign: 'center', letterSpacing: '0.02em' }}>
-                f* = (b × p − q) / b
-              </div>
-              <div style={{ marginTop: '0.875rem', fontSize: '0.88rem', color: '#a0aec0', lineHeight: 1.7 }}>
-                <strong style={{ color: '#ffffff' }}>f*</strong> = optimaler Anteil der Bankroll<br />
-                <strong style={{ color: '#ffffff' }}>b</strong> = Nettogewinn bei Sieg (Quote − 1)<br />
-                <strong style={{ color: '#ffffff' }}>p</strong> = geschätzte Gewinnwahrscheinlichkeit<br />
-                <strong style={{ color: '#ffffff' }}>q</strong> = Verlustwahrscheinlichkeit (1 − p)
-              </div>
-            </div>
-            <div style={{ color: '#c8d6e8', lineHeight: 1.8 }}>
-              <p>
-                Das Kelly-Kriterium wurde 1956 von John L. Kelly Jr. entwickelt und maximiert langfristig das logarithmische Kapitalwachstum. Professionelle Sportwetter und Trader nutzen es seit Jahrzehnten.
+            <p style={{ color: '#4A4A4A', lineHeight: 1.8 }}>
+              Das <strong style={{ color: '#1A1A1A' }}>Kelly-Kriterium</strong> ist eine mathematische Formel für optimales Bankroll-Management. Es berechnet den Prozentsatz deines Kapitals, den du auf eine Wette setzen solltest, um langfristiges Kapitalwachstum zu maximieren.
+            </p>
+            <div style={{ background: '#FFFFFF', border: '1px solid #E5E5E0', borderRadius: '12px', padding: '1.5rem' }}>
+              <h3 className="font-serif" style={{ color: '#1A1A1A', fontWeight: 700, marginBottom: '0.75rem', fontSize: '1.125rem' }}>
+                Die Formel
+              </h3>
+              <p style={{ fontSize: '0.9375rem', color: '#4A4A4A', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                <strong>f* = (b·p − q) / b</strong>
               </p>
+              <ul style={{ fontSize: '0.9375rem', color: '#6B7280', lineHeight: 1.8, paddingLeft: '1.25rem' }}>
+                <li><strong style={{ color: '#1A1A1A' }}>f*</strong> = optimaler Einsatz als Anteil der Bankroll</li>
+                <li><strong style={{ color: '#1A1A1A' }}>b</strong> = Netto-Quote (Quote − 1)</li>
+                <li><strong style={{ color: '#1A1A1A' }}>p</strong> = deine geschätzte Gewinnwahrscheinlichkeit</li>
+                <li><strong style={{ color: '#1A1A1A' }}>q</strong> = 1 − p (Verlustwahrscheinlichkeit)</li>
+              </ul>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-              {[
-                { title: 'Voll-Kelly', desc: 'Maximales Wachstum, aber hohe Schwankungen. Nur für Experten mit sehr genauen Wahrscheinlichkeiten.', color: '#ff9500' },
-                { title: 'Halb-Kelly', desc: 'Halbierter Einsatz, deutlich weniger Volatilität, ~75% des maximalen Wachstums.', color: '#00ff88' },
-                { title: 'Viertel-Kelly', desc: 'Sehr konservativ, kaum Drawdown-Risiko. Ideal für Einsteiger.', color: '#00ccff' },
-              ].map(opt => (
-                <div key={opt.title} style={{ background: '#141d35', border: `1px solid ${opt.color}22`, borderRadius: '10px', padding: '1rem 1.25rem' }}>
-                  <div style={{ fontWeight: 700, color: opt.color, marginBottom: '0.4rem' }}>{opt.title}</div>
-                  <div style={{ fontSize: '0.85rem', color: '#a0aec0', lineHeight: 1.6 }}>{opt.desc}</div>
-                </div>
-              ))}
-            </div>
+            <p style={{ color: '#4A4A4A', lineHeight: 1.8 }}>
+              In der Praxis empfehlen viele Profis den <strong style={{ color: '#1A1A1A' }}>Halb-Kelly</strong> — dieser reduziert die Volatilität deutlich bei nur leicht geringeren Ertragserwartungen.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ background: 'linear-gradient(135deg, #0f1e3a 0%, #0a1628 100%)', border: '1px solid rgba(0,255,136,0.15)', borderRadius: '16px', margin: '0 1.5rem 4rem', maxWidth: '1200px', padding: '3rem 2rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', fontWeight: 800, color: '#ffffff', marginBottom: '1rem' }}>Faire Preise, echter Markt.</h2>
-        <p style={{ color: '#a0aec0', marginBottom: '1.5rem' }}>Mit 0% Marge bei Atlas Market funktioniert Value-Betting so wie es soll — ohne Buchmacher-Vorteil der deine Rendite auffrisst.</p>
-        <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" style={{ background: '#00ff88', color: '#0a0f1c', padding: '0.85rem 2.5rem', borderRadius: '10px', fontWeight: 800, fontSize: '1rem', textDecoration: 'none', display: 'inline-block' }}>
-          Jetzt kostenlos starten →
-        </a>
-      </section>
+      <div style={{ borderTop: '1px solid #E5E5E0' }}>
+        <section style={{ padding: '4rem 1.25rem', textAlign: 'center', backgroundColor: '#F3F3EE' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto' }}>
+            <h2
+              className="font-serif"
+              style={{ fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', fontWeight: 700, color: '#1A1A1A', marginBottom: '1rem', letterSpacing: '-0.02em' }}
+            >
+              Faire Quoten für bessere Kalkulationen.
+            </h2>
+            <p style={{ color: '#6B7280', marginBottom: '1.5rem', lineHeight: 1.7 }}>
+              Auf Atlas Market handelst du zu Marktpreisen ohne Buchmacher-Marge — perfekt für Value Betting.
+            </p>
+            <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Zu Atlas Markets →
+            </a>
+          </div>
+        </section>
+      </div>
     </>
   )
 }

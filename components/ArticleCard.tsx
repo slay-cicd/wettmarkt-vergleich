@@ -12,46 +12,52 @@ function formatDate(dateStr: string) {
 }
 
 export default function ArticleCard({ post, featured = false }: ArticleCardProps) {
+  if (featured) {
+    return (
+      <div style={{ marginBottom: '0' }}>
+        <p style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: '1.25rem' }}>
+          Empfohlener Artikel
+        </p>
+        <Link href={`/blog/${post.slug}`} className="group block" style={{ textDecoration: 'none' }} aria-label={`Artikel lesen: ${post.title}`}>
+          <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem' }}>
+            <span className="tag-pill">{post.category}</span>
+          </div>
+          <h2
+            className="font-serif group-hover:text-[#16a34a] transition-colors duration-200"
+            style={{ fontSize: '1.375rem', fontWeight: 700, lineHeight: 1.35, color: '#1A1A1A', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}
+          >
+            {post.title}
+          </h2>
+          <p style={{ fontSize: '0.9375rem', lineHeight: 1.7, color: '#6B7280', marginBottom: '0.75rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
+            {post.description}
+          </p>
+          <p style={{ fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#9CA3AF' }}>
+            {formatDate(post.date)} · {post.readTime} Min. Lesezeit
+          </p>
+        </Link>
+      </div>
+    )
+  }
+
   return (
-    <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
-      <article
-        style={{
-          background: '#141d35',
-          border: '1px solid #1e2d4a',
-          borderRadius: '12px',
-          padding: featured ? '2rem' : '1.5rem',
-          cursor: 'pointer',
-          height: '100%',
-          transition: 'border-color 0.2s, transform 0.2s',
-        }}
-        onMouseEnter={(e) => {
-          const el = e.currentTarget; el.style.borderColor = '#00ff88'; el.style.transform = 'translateY(-2px)'
-        }}
-        onMouseLeave={(e) => {
-          const el = e.currentTarget; el.style.borderColor = '#1e2d4a'; el.style.transform = 'translateY(0)'
-        }}
-      >
-        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginBottom: '0.75rem' }}>
-          <span style={{
-            background: 'rgba(0,255,136,0.12)', color: '#00ff88',
-            padding: '0.25rem 0.75rem', borderRadius: '999px',
-            fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' as const,
-          }}>{post.category}</span>
-          <span style={{ color: '#4a5568', fontSize: '0.8rem' }}>{post.readTime} Min.</span>
+    <article style={{ borderBottom: '1px solid #E5E5E0', paddingBottom: '2rem' }}>
+      <Link href={`/blog/${post.slug}`} className="group block" style={{ textDecoration: 'none' }} aria-label={`Artikel lesen: ${post.title}`}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+          <span className="tag-pill">{post.category}</span>
         </div>
-        <h2 style={{
-          fontSize: featured ? '1.4rem' : '1.1rem', fontWeight: 700,
-          color: '#ffffff', lineHeight: 1.35, marginBottom: '0.75rem', letterSpacing: '-0.02em',
-        }}>{post.title}</h2>
-        <p style={{
-          color: '#718096', fontSize: '0.9rem', lineHeight: 1.65, marginBottom: '1.25rem',
-          display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden',
-        }}>{post.description}</p>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ color: '#4a5568', fontSize: '0.8rem' }}>{formatDate(post.date)}</span>
-          <span style={{ color: '#00ff88', fontSize: '0.85rem', fontWeight: 600 }}>Weiterlesen →</span>
-        </div>
-      </article>
-    </Link>
+        <h3
+          className="font-serif group-hover:text-[#16a34a] transition-colors duration-200"
+          style={{ fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.35, color: '#1A1A1A', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}
+        >
+          {post.title}
+        </h3>
+        <p style={{ fontSize: '0.9375rem', lineHeight: 1.65, color: '#6B7280', marginBottom: '1rem', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
+          {post.description}
+        </p>
+        <p style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#9CA3AF' }}>
+          {formatDate(post.date)}<span style={{ margin: '0 0.5rem' }}>·</span>{post.readTime} Min. Lesezeit
+        </p>
+      </Link>
+    </article>
   )
 }

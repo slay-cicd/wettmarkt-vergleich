@@ -8,88 +8,135 @@ export const metadata: Metadata = {
   description: 'Der unabhängige Wettmarkt-Vergleich: Quoten, Margen und Fairness aller großen Sportwetten-Anbieter. Und warum Prediction Markets die bessere Wahl sind.',
 }
 
+const tools = [
+  { href: '/tools/margin-rechner', icon: '📊', title: 'Margin-Rechner', desc: 'Berechne die versteckte Buchmacher-Marge aus jeder Quote. Sieh sofort, wie fair eine Quote wirklich ist.' },
+  { href: '/tools/kelly-rechner', icon: '📐', title: 'Kelly-Rechner', desc: 'Optimalen Einsatz mit dem Kelly-Kriterium berechnen — für maximales Kapitalwachstum.' },
+  { href: '/quoten-vergleich', icon: '⚖️', title: 'Quoten-Vergleich', desc: 'Aktuelle Bundesliga-Quoten bei bet365, bwin, Tipico und Atlas Market auf einen Blick.' },
+  { href: '/tools/systemwetten-rechner', icon: '🎯', title: 'Systemwetten-Rechner', desc: '2 aus 3, 3 aus 4 und mehr — alle Kombinationen und möglichen Gewinne sofort berechnen.' },
+  { href: '/anbieter-vergleich', icon: '🏆', title: 'Anbieter-Vergleich', desc: 'Quotenschlüssel, Bonus und Auszahlung aller großen Sportwetten-Anbieter im Direktvergleich.' },
+]
+
 export default function HomePage() {
   const posts = getAllPosts()
   const [featured, ...rest] = posts
 
   return (
     <>
-      <section style={{ background: 'linear-gradient(135deg, #0a0f1c 0%, #0f1e3a 100%)', padding: '5rem 1.5rem 4rem', borderBottom: '1px solid #1e2d4a', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-200px', right: '-100px', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(0,255,136,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
-        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,255,136,0.1)', border: '1px solid rgba(0,255,136,0.2)', borderRadius: '999px', padding: '0.4rem 1rem', marginBottom: '1.5rem' }}>
-            <span style={{ color: '#00ff88', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.08em' }}>📊 Unabhängige Analysen 2026</span>
-          </div>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.03em', marginBottom: '1.25rem' }}>
-            Wettmarkt Vergleich<br />
-            <span style={{ color: '#00ff88' }}>Quoten & Fairness im Check</span>
+      {/* Hero */}
+      <section style={{ paddingTop: '100px', paddingBottom: '5rem', paddingLeft: '1.25rem', paddingRight: '1.25rem' }}>
+        <div style={{ maxWidth: '680px', margin: '0 auto' }}>
+          <h1
+            className="font-serif"
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.02em', color: '#1A1A1A', marginBottom: '1.5rem' }}
+          >
+            Sportwetten-Märkte &amp; Quoten im Vergleich
           </h1>
-          <p style={{ fontSize: '1.15rem', color: '#a0aec0', lineHeight: 1.7, marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
-            Wir vergleichen Sportwetten-Märkte, analysieren Buchmacher-Margen und zeigen, warum Prediction Markets wie Atlas Market die transparentere Alternative sind.
+          <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#6B7280', marginBottom: '2rem', maxWidth: '560px' }}>
+            Unabhängige Analysen zu Buchmacher-Margen, Quoten-Fairness und warum Prediction Markets wie Atlas Market die transparentere Alternative sind.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" style={{ background: '#00ff88', color: '#0a0f1c', padding: '0.85rem 2rem', borderRadius: '10px', fontWeight: 800, fontSize: '1rem', textDecoration: 'none' }}>Zu Atlas Market →</a>
-            <a href="#articles" style={{ background: 'transparent', color: '#ffffff', padding: '0.85rem 2rem', borderRadius: '10px', fontWeight: 600, fontSize: '1rem', textDecoration: 'none', border: '1px solid #1e2d4a' }}>Vergleiche lesen</a>
+          <div className="flex flex-wrap" style={{ gap: '0.75rem', marginBottom: '3.5rem' }}>
+            <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Zu Atlas Markets →
+            </a>
+            <Link href="/anbieter-vergleich" className="btn-outline">
+              Anbieter vergleichen
+            </Link>
           </div>
-        </div>
-      </section>
 
-      <section style={{ background: '#0f1628', borderBottom: '1px solid #1e2d4a', padding: '1.25rem 1.5rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1rem', textAlign: 'center' }}>
-          {[
-            { label: 'Anbieter analysiert', value: '20+' },
-            { label: 'Ø Buchmacher-Marge', value: '6-8%' },
-            { label: 'Atlas Market Marge', value: '0%' },
-            { label: 'Artikel & Vergleiche', value: '20+' },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#00ff88', letterSpacing: '-0.02em' }}>{stat.value}</div>
-              <div style={{ fontSize: '0.8rem', color: '#4a5568', marginTop: '0.25rem' }}>{stat.label}</div>
+          <div className="divider" />
+
+          {/* Featured article */}
+          {featured && (
+            <div style={{ marginTop: '2.5rem' }}>
+              <ArticleCard post={featured} featured />
             </div>
-          ))}
+          )}
         </div>
       </section>
 
       {/* Tools section */}
-      <section style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '0.5rem' }}>Kostenlose Rechner & Tools</h2>
-          <p style={{ color: '#718096', fontSize: '0.95rem' }}>Praktische Tools für smarte Sportwetter</p>
+      <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.25rem 5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '2.5rem' }}>
+          <div>
+            <p style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: '0.5rem' }}>
+              Kostenlose Tools
+            </p>
+            <h2
+              className="font-serif"
+              style={{ fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.02em', color: '#1A1A1A' }}
+            >
+              Rechner &amp; Vergleiche
+            </h2>
+          </div>
         </div>
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
-          {[
-            { href: '/tools/margin-rechner', icon: '📊', title: 'Margin-Rechner', desc: 'Berechne die versteckte Buchmacher-Marge aus jeder Quote. Sieh sofort, wie fair eine Quote wirklich ist.' },
-            { href: '/tools/kelly-rechner', icon: '📐', title: 'Kelly-Rechner', desc: 'Optimalen Einsatz mit dem Kelly-Kriterium berechnen — für maximales Kapitalwachstum.' },
-            { href: '/quoten-vergleich', icon: '⚖️', title: 'Quoten-Vergleich', desc: 'Aktuelle Bundesliga-Quoten bei bet365, bwin, Tipico und Atlas Market auf einen Blick.' },
-            { href: '/tools/systemwetten-rechner', icon: '🎯', title: 'Systemwetten-Rechner', desc: '2 aus 3, 3 aus 4 und mehr — alle Kombinationen und möglichen Gewinne sofort berechnen.' },
-            { href: '/anbieter-vergleich', icon: '🏆', title: 'Anbieter-Vergleich', desc: 'Quotenschlüssel, Bonus und Auszahlung aller großen Sportwetten-Anbieter im Direktvergleich.' },
-          ].map(tool => (
-            <Link key={tool.href} href={tool.href} style={{ textDecoration: 'none', display: 'block', background: '#141d35', border: '1px solid #1e2d4a', borderRadius: '14px', padding: '1.5rem', transition: 'border-color 0.15s' }}>
+          {tools.map(tool => (
+            <Link key={tool.href} href={tool.href} className="tool-card" style={{ textDecoration: 'none' }}>
               <div style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>{tool.icon}</div>
-              <h3 style={{ fontWeight: 700, color: '#ffffff', fontSize: '1.05rem', marginBottom: '0.5rem' }}>{tool.title}</h3>
-              <p style={{ color: '#718096', fontSize: '0.88rem', lineHeight: 1.6 }}>{tool.desc}</p>
-              <div style={{ marginTop: '1rem', color: '#00ff88', fontSize: '0.85rem', fontWeight: 600 }}>Jetzt nutzen →</div>
+              <h3
+                className="font-serif"
+                style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '1.125rem', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}
+              >
+                {tool.title}
+              </h3>
+              <p style={{ color: '#6B7280', fontSize: '0.875rem', lineHeight: 1.65 }}>{tool.desc}</p>
+              <div style={{ marginTop: '1rem', color: '#16a34a', fontSize: '0.875rem', fontWeight: 600 }}>
+                Jetzt nutzen →
+              </div>
             </Link>
           ))}
         </div>
       </section>
 
-      <section id="articles" style={{ padding: '4rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '2.5rem' }}>
-          <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '0.5rem' }}>Aktuelle Vergleiche</h2>
-          <p style={{ color: '#718096', fontSize: '0.95rem' }}>Sportwetten-Märkte, Quoten und Alternativen im Detail</p>
+      {/* Articles section */}
+      <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.25rem 6rem' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '2.5rem' }}>
+          <div>
+            <p style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: '0.5rem' }}>
+              Alle Artikel
+            </p>
+            <h2
+              className="font-serif"
+              style={{ fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.02em', color: '#1A1A1A' }}
+            >
+              Vergleiche &amp; Analysen
+            </h2>
+          </div>
+          <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" className="btn-outline hidden sm:inline-block">
+            Zu Atlas Markets →
+          </a>
         </div>
-        {featured && <div style={{ marginBottom: '2rem' }}><ArticleCard post={featured} featured /></div>}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5rem' }}>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2.5rem 2.5rem' }}>
           {rest.map((post) => <ArticleCard key={post.slug} post={post} />)}
         </div>
       </section>
 
-      <section style={{ background: 'linear-gradient(135deg, #0f1e3a 0%, #0a1628 100%)', border: '1px solid rgba(0,255,136,0.15)', borderRadius: '16px', margin: '0 auto 4rem', maxWidth: '1200px', padding: '3rem 2rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#ffffff', marginBottom: '1rem', letterSpacing: '-0.02em' }}>Kein Buchmacher. Nur der Markt.</h2>
-        <p style={{ color: '#a0aec0', marginBottom: '1.5rem', fontSize: '1.05rem' }}>Atlas Market gibt dir faire Preise ohne Haus-Vorteil. Das ist der Unterschied.</p>
-        <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" style={{ background: '#00ff88', color: '#0a0f1c', padding: '0.85rem 2.5rem', borderRadius: '10px', fontWeight: 800, fontSize: '1rem', textDecoration: 'none', display: 'inline-block' }}>Jetzt kostenlos starten →</a>
-      </section>
+      {/* CTA section */}
+      <div style={{ borderTop: '1px solid #E5E5E0' }}>
+        <section
+          style={{ padding: '5rem 1.25rem', backgroundColor: '#F3F3EE' }}
+        >
+          <div style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: '1rem' }}>
+              Atlas Markets
+            </p>
+            <h2
+              className="font-serif"
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 700, letterSpacing: '-0.02em', color: '#1A1A1A', marginBottom: '1rem' }}
+            >
+              Kein Buchmacher. Nur der Markt.
+            </h2>
+            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: '#6B7280', marginBottom: '2rem', maxWidth: '480px', margin: '0 auto 2rem' }}>
+              Atlas Market gibt dir faire Preise ohne Haus-Vorteil — Europas führende Prediction-Market-Plattform.
+            </p>
+            <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Jetzt kostenlos starten →
+            </a>
+          </div>
+        </section>
+      </div>
     </>
   )
 }
