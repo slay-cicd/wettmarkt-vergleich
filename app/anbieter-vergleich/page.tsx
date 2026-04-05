@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 const providers = [
   {
     name: 'Atlas Market',
+    logo: '/logo.png',
     slug: 'atlas-market',
     url: 'https://atlasmarkets.de',
     quotenschluessel: '100%',
@@ -23,6 +24,7 @@ const providers = [
   },
   {
     name: 'bet365',
+    logo: '/logos/bet365.png',
     slug: 'bet365',
     url: '#',
     quotenschluessel: '93%',
@@ -37,6 +39,7 @@ const providers = [
   },
   {
     name: 'bwin',
+    logo: '/logos/bwin.png',
     slug: 'bwin',
     url: '#',
     quotenschluessel: '92%',
@@ -51,6 +54,7 @@ const providers = [
   },
   {
     name: 'Tipico',
+    logo: '/logos/tipico.png',
     slug: 'tipico',
     url: '#',
     quotenschluessel: '91%',
@@ -65,6 +69,7 @@ const providers = [
   },
   {
     name: 'betway',
+    logo: '/logos/betway.png',
     slug: 'betway',
     url: '#',
     quotenschluessel: '93%',
@@ -79,6 +84,7 @@ const providers = [
   },
   {
     name: 'Unibet',
+    logo: '/logos/unibet.png',
     slug: 'unibet',
     url: '#',
     quotenschluessel: '92%',
@@ -93,6 +99,7 @@ const providers = [
   },
   {
     name: 'Interwetten',
+    logo: '/logos/interwetten.png',
     slug: 'interwetten',
     url: '#',
     quotenschluessel: '91%',
@@ -162,7 +169,7 @@ export default function AnbieterVergleichPage() {
       {/* Atlas Market Feature Box */}
       <section style={{ padding: '0 1.25rem 2rem', maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: '12px', padding: '1.5rem', display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: '1.5rem', alignItems: 'center' }}>
-          <div style={{ width: '48px', height: '48px', background: '#16a34a', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '20px', color: '#FFFFFF', flexShrink: 0 }}>A</div>
+          <img src="/logo.png" alt="Atlas Market" style={{ width: '48px', height: '48px', objectFit: 'contain', borderRadius: '10px' }} />
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.25rem' }}>
               <span style={{ fontWeight: 700, fontSize: '1.125rem', color: '#16a34a' }}>Atlas Market</span>
@@ -209,7 +216,7 @@ export default function AnbieterVergleichPage() {
                           border: p.highlight ? 'none' : '1px solid #E5E5E0',
                           flexShrink: 0,
                         }}>
-                          {p.name[0]}
+                          {p.logo ? <img src={p.logo} alt={p.name} style={{ width: '24px', height: '24px', objectFit: 'contain', borderRadius: '4px' }} /> : p.name[0]}
                         </div>
                         <div>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
