@@ -22,7 +22,7 @@ const providers = [
     external: true,
     quotenschluessel: '100%',
     minDeposit: '10 €',
-    bonus: 'Kein Bonus nötig',
+    bonus: '20€ Startguthaben',
     payoutSpeed: 'Sofort',
     rating: 5.0,
     stars: 5,
