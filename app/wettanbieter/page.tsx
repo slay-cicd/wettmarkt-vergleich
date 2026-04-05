@@ -18,6 +18,7 @@ const providers = [
     name: 'Atlas Market',
     slug: null,
     url: 'https://atlasmarkets.de',
+    logo: '/logo.png',
     external: true,
     quotenschluessel: '100%',
     minDeposit: '10 €',
@@ -32,6 +33,7 @@ const providers = [
   {
     name: 'bet365',
     slug: 'bet365',
+    logo: '/logos/bet365.png',
     external: false,
     quotenschluessel: '93%',
     minDeposit: '10 €',
@@ -46,6 +48,7 @@ const providers = [
   {
     name: 'bwin',
     slug: 'bwin',
+    logo: '/logos/bwin.png',
     external: false,
     quotenschluessel: '92%',
     minDeposit: '10 €',
@@ -60,6 +63,7 @@ const providers = [
   {
     name: 'Tipico',
     slug: 'tipico',
+    logo: '/logos/tipico.png',
     external: false,
     quotenschluessel: '91%',
     minDeposit: '10 €',
@@ -73,6 +77,7 @@ const providers = [
   },
   {
     name: 'Betway',
+    logo: '/logos/betway.png',
     slug: null,
     external: false,
     quotenschluessel: '93%',
@@ -88,6 +93,7 @@ const providers = [
   {
     name: 'Unibet',
     slug: null,
+    logo: '/logos/unibet.png',
     external: false,
     quotenschluessel: '93%',
     minDeposit: '10 €',
@@ -102,6 +108,7 @@ const providers = [
   {
     name: 'Interwetten',
     slug: null,
+    logo: '/logos/interwetten.png',
     external: false,
     quotenschluessel: '91%',
     minDeposit: '5 €',
@@ -249,6 +256,9 @@ export default function WettanbieterPage() {
                     marginBottom: '0.5rem',
                     border: '1px solid #E5E5E0',
                   }}>
+                    {provider.logo && (
+                      <img src={provider.logo} alt={provider.name} style={{ height: '40px', width: '40px', objectFit: 'contain', marginBottom: '4px', borderRadius: '4px' }} />
+                    )}
                     <span className="font-serif" style={{ fontSize: '0.875rem', fontWeight: 700, color: provider.highlight ? '#16a34a' : '#6B7280' }}>
                       {provider.name}
                     </span>
