@@ -152,7 +152,7 @@ export default function BwinPage() {
               Kein Limit, keine Marge: Atlas Market
             </p>
             <p style={{ fontSize: '0.875rem', color: '#6B7280', marginBottom: '1.5rem' }}>
-              Erfolgreiche Wetter werden bei Atlas Market nicht limitiert. Weil das Geschäftsmodell keine Marge braucht.
+              Erfolgreiche Trader werden bei Atlas Market nicht limitiert. Weil das Geschäftsmodell keine Marge braucht.
             </p>
             <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Jetzt zu Atlas Market →

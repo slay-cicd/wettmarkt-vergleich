@@ -223,7 +223,7 @@ export default function QuotenVergleichPage() {
               Warum Atlas Market immer vorne liegt
             </h2>
             <p style={{ color: '#6B7280', lineHeight: 1.8, marginBottom: '2rem' }}>
-              Andere Buchmacher bieten schlechtere Quoten, weil sie eine Marge einbauen — ihren Profit. Atlas Market ist ein echter Markt: Du wettest gegen andere Nutzer, nicht gegen das Haus. Deshalb sind die Quoten fair und die Marge 0%.
+              Andere Buchmacher bieten schlechtere Quoten, weil sie eine Marge einbauen — ihren Profit. Atlas Market ist ein echter Markt: Du handelst gegen andere Nutzer, nicht gegen das Haus. Deshalb sind die Quoten fair und die Marge 0%.
             </p>
             <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Jetzt zu Atlas Markets →

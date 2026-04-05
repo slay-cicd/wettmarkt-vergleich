@@ -45,7 +45,7 @@ export default function TippsPage() {
             Wett-Tipps: Der letzte Spieltag der Saison
           </h1>
           <p style={{ fontSize: '1.0625rem', lineHeight: 1.8, color: '#6B7280', marginBottom: '2rem' }}>
-            Spieltag 34 – der Abschluss einer nervenstarken Bundesliga-Saison 2025/26. Fünf Spiele, fünf Analysen: Wir schauen auf Form, Head-to-Head, Motivation und Quoten. Alle Tipps inklusive Begründung und empfohlener Wette bei Atlas Market.
+            Spieltag 34 – der Abschluss einer nervenstarken Bundesliga-Saison 2025/26. Fünf Spiele, fünf Analysen: Wir schauen auf Form, Head-to-Head, Motivation und Quoten. Alle Tipps inklusive Begründung und empfohlenem Trade bei Atlas Market.
           </p>
           <p style={{ fontSize: '0.8125rem', color: '#9CA3AF', borderTop: '1px solid #E5E5E0', paddingTop: '1rem' }}>
             ⚠️ Sportwetten-Tipps sind keine Gewinngarantie. Immer nur Beträge einsetzen, deren Verlust verkraftbar ist. 18+.

@@ -55,7 +55,7 @@ Die Unterschiede sind massiv. Ein Top-Anbieter mit 5% Margin ist deutlich besser
 
 Auf [Atlas Market](https://atlasmarkets.de) gibt es keine Buchmacher-Margin, weil es keinen Buchmacher gibt. Du handelst direkt gegen andere Nutzer. Die Plattform verdient nur eine sehr geringe Handelsgebühr auf abgeschlossene Trades.
 
-Das bedeutet: Wenn du bei Atlas Market auf Bayern wettest und gewinnst – bekommst du den fairen Marktpreis. Keine versteckte Gebühr. Kein Haus-Vorteil.
+Das bedeutet: Wenn du bei Atlas Market auf Bayern tradest und gewinnst – bekommst du den fairen Marktpreis. Keine versteckte Gebühr. Kein Haus-Vorteil.
 
 ## Praktischer Margen-Check
 

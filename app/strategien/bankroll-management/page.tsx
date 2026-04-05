@@ -124,7 +124,7 @@ export default function BankrollManagementPage() {
             Bei <a href="https://atlasmarkets.de" style={{ color: '#16a34a', fontWeight: 600 }}>Atlas Market</a> kannst du dein Kapital transparent tracken, da alle Transaktionen klar sichtbar sind. Die fehlende Buchmacher-Marge hilft ebenfalls: Weniger versteckte Kosten bedeuten, dass deine Bankroll weniger Druck hat und du mehr Spielraum für die natürliche Varianz hast.
           </p>
           <p>
-            Außerdem gibt es keine Limits. Ein klassischer Buchmacher kann dich limitieren, wenn du zu gut wirst – was deine Bankroll-Strategie faktisch unterläuft. Bei Atlas Market wettest du gegen andere Teilnehmer. Wer gut ist, darf so viel setzen, wie der Markt trägt.
+            Außerdem gibt es keine Limits. Ein klassischer Buchmacher kann dich limitieren, wenn du zu gut wirst – was deine Bankroll-Strategie faktisch unterläuft. bei Atlas Market tradest du gegen andere Teilnehmer. Wer gut ist, darf so viel setzen, wie der Markt trägt.
           </p>
 
           <h2>Die drei unverbrüchlichen Regeln</h2>

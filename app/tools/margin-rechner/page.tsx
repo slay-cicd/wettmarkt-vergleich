@@ -72,7 +72,7 @@ export default function MarginRechnerPage() {
               0% Marge — immer.
             </h2>
             <p style={{ color: '#6B7280', marginBottom: '1.5rem', lineHeight: 1.7 }}>
-              Bei Atlas Market wettest du gegen den Markt, nicht gegen einen Buchmacher. Kein Haus-Vorteil, faire Preise.
+              bei Atlas Market tradest du gegen den Markt, nicht gegen einen Buchmacher. Kein Haus-Vorteil, faire Preise.
             </p>
             <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Jetzt kostenlos starten →

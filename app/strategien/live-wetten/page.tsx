@@ -120,7 +120,7 @@ export default function LiveWettenPage() {
             Ausnahme: Wenn du klar siehst, dass die Reaktion das Ereignis komplett falsch bewertet, musst du schnell handeln. Das ist echter Live-Edge – aber er ist selten.
           </p>
 
-          <h2>Atlas Market für Live-Wetten</h2>
+          <h2>Atlas Market für Live-Trading</h2>
           <p>
             Bei <a href="https://atlasmarkets.de" style={{ color: '#16a34a', fontWeight: 600 }}>Atlas Market</a> werden Live-Quoten durch die Markt-Teilnehmer gebildet – nicht durch einen Algorithmus mit Limits und Sicherheitspuffern. Das bedeutet: Quoten können kurzzeitig weniger effizient sein, wenn ein Ereignis überrascht. Für erfahrene Live-Wetter ist das eine Chance.
           </p>
@@ -140,7 +140,7 @@ export default function LiveWettenPage() {
 
         <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <a href="https://atlasmarkets.de" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Live-Wetten bei Atlas Market →
+            Live-Trading bei Atlas Market →
           </a>
           <Link href="/strategien/value-betting" className="btn-outline">
             Zurück zu Value Betting

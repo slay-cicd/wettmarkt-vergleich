@@ -185,7 +185,7 @@ export default function BundesligaTabellenPage() {
           <div style={{ marginTop: '3rem', padding: '2rem', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div>
               <p className="font-serif" style={{ fontWeight: 700, fontSize: '1.25rem', color: '#1A1A1A', marginBottom: '0.25rem' }}>
-                Wette auf die Bundesliga bei Atlas Market
+                Trade auf die Bundesliga bei Atlas Market
               </p>
               <p style={{ fontSize: '0.875rem', color: '#6B7280' }}>
                 Faire Quoten ohne Buchmacher-Marge. Jetzt Konto eröffnen und auf Meister, Abstieg oder den Spieltag wetten.
