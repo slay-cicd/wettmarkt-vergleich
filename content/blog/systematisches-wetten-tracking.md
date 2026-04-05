@@ -6,6 +6,7 @@ date: "2026-03-14"
 category: "Strategie"
 keywords: ["Sportwetten Tracking", "Wetten Performance", "Sportwetten Statistiken", "Wettanalyse"]
 readTime: 8
+heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
 ---
 
 # Systematisches Wetten-Tracking: Wie du deine Performance wirklich misst

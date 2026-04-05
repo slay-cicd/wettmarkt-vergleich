@@ -6,6 +6,7 @@ date: "2026-03-13"
 category: "Vergleich"
 keywords: ["Sportwetten gesperrt", "Buchmacher Limits", "Sportwetten Account gesperrt", "Quoten Vergleich"]
 readTime: 8
+heroImage: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1200&q=80"
 ---
 
 # Sportwetten-Limits: Warum Buchmacher Gewinner sperren und was du dagegen tust

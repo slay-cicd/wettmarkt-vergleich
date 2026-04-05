@@ -6,6 +6,7 @@ date: "2026-03-22"
 category: "Strategie"
 keywords: ["Kelly Kriterium", "Wettstrategie", "Sportwetten Strategie", "Bankroll Management"]
 readTime: 9
+heroImage: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&q=80"
 ---
 
 # Kelly-Kriterium: Die optimale Wettstrategie für Sportwetten

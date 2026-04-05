@@ -6,6 +6,7 @@ date: "2026-03-24"
 category: "Vergleich"
 keywords: ["Wettbörse Vergleich", "Betfair Vergleich", "Sportwetten Börse", "Quoten Vergleich"]
 readTime: 9
+heroImage: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1200&q=80"
 ---
 
 # Wettbörse Vergleich: Betfair, Matchbook und Atlas Market im Check

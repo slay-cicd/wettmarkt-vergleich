@@ -6,6 +6,7 @@ date: "2026-03-19"
 category: "Analyse"
 keywords: ["Sportwetten Bonus", "Willkommensbonus Sportwetten", "Sportwetten Vergleich", "Bonus Analyse"]
 readTime: 8
+heroImage: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&q=80"
 ---
 
 # Sportwetten Bonus-Analyse: Was Willkommensboni wirklich wert sind

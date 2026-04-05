@@ -6,6 +6,7 @@ date: "2026-03-26"
 category: "Strategie"
 keywords: ["Value Betting", "Wettstrategien", "Sportwetten Strategie", "Quoten Vergleich"]
 readTime: 10
+heroImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80"
 ---
 
 # Value Betting: Wie du systematisch profitable Wetten findest

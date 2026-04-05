@@ -6,6 +6,7 @@ date: "2026-03-20"
 category: "Grundlagen"
 keywords: ["Markttiefe Sportwetten", "Liquidität Wettmarkt", "Sportwetten Vergleich", "Wettmarkt Grundlagen"]
 readTime: 8
+heroImage: "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=1200&q=80"
 ---
 
 # Markttiefe und Liquidität: Was du beim Wetten wissen musst

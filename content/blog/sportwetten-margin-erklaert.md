@@ -6,6 +6,7 @@ date: "2026-03-28"
 category: "Grundlagen"
 keywords: ["Buchmacher Margin", "Sportwetten Margin", "Wettquoten erklärt", "Sportwetten Vergleich"]
 readTime: 9
+heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
 ---
 
 # Buchmacher-Margin erklärt: Was du wirklich bezahlst wenn du wettest

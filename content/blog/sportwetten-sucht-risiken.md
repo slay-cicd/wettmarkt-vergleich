@@ -6,6 +6,7 @@ date: "2026-03-23"
 category: "Risiken"
 keywords: ["Sportwetten Risiken", "Sportwetten Sucht", "Sportwetten Nachteile", "verantwortungsvolles Wetten"]
 readTime: 9
+heroImage: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=1200&q=80"
 ---
 
 # Sportwetten-Risiken: Was du über Sucht und Haus-Vorteil wissen musst

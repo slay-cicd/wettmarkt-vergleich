@@ -6,6 +6,7 @@ date: "2026-03-21"
 category: "Bundesliga"
 keywords: ["Bundesliga Wettmarkt", "Bundesliga Quoten", "Wettmarkt Vergleich", "Bundesliga Sportwetten"]
 readTime: 8
+heroImage: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1200&q=80"
 ---
 
 # Bundesliga Wettmarkt-Analyse: Wo findest du die besten Kurse?

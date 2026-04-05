@@ -6,6 +6,7 @@ date: "2026-03-17"
 category: "Regulierung"
 keywords: ["Sportwetten Deutschland", "Sportwetten legal", "Glücksspielstaatsvertrag", "Sportwetten Regulierung"]
 readTime: 8
+heroImage: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200&q=80"
 ---
 
 # Sportwetten-Regulierung Deutschland 2026: Was ist legal?

@@ -6,6 +6,7 @@ date: "2026-03-15"
 category: "Champions League"
 keywords: ["Champions League Quoten", "CL Wettmarkt", "Quoten Vergleich", "Champions League Sportwetten"]
 readTime: 8
+heroImage: "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=1200&q=80"
 ---
 
 # Champions League Wettmarkt: Quoten und Märkte im Vergleich

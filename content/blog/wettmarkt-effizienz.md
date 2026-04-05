@@ -6,6 +6,7 @@ date: "2026-03-10"
 category: "Analyse"
 keywords: ["Wettmarkt Effizienz", "Sportwetten Edge", "Quoten Vergleich", "Value Betting"]
 readTime: 9
+heroImage: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&q=80"
 ---
 
 # Wettmarkt-Effizienz: Wo liegt echter Edge im Sportwetten-Markt?

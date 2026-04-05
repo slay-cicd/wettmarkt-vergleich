@@ -6,6 +6,7 @@ date: "2026-03-11"
 category: "Strategie"
 keywords: ["Sportwetten Arbitrage", "Arb Betting", "Risikofreie Wette", "Sportwetten Vergleich"]
 readTime: 8
+heroImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80"
 ---
 
 # Sportwetten-Arbitrage: Risikofreier Gewinn – oder doch nicht?

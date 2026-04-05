@@ -6,6 +6,7 @@ date: "2026-03-09"
 category: "Zukunft"
 keywords: ["Sportwetten Zukunft", "Prediction Market Zukunft", "Sportwetten Entwicklung", "Atlas Market"]
 readTime: 8
+heroImage: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1200&q=80"
 ---
 
 # Die Zukunft der Sportwetten: Prediction Markets übernehmen

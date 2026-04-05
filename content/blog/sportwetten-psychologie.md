@@ -6,6 +6,7 @@ date: "2026-03-16"
 category: "Psychologie"
 keywords: ["Sportwetten Psychologie", "Wetten Psychologie", "Kognitive Biases", "Sportwetten Strategie"]
 readTime: 9
+heroImage: "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=1200&q=80"
 ---
 
 # Sportwetten-Psychologie: Warum wir systematisch schlechte Entscheidungen treffen

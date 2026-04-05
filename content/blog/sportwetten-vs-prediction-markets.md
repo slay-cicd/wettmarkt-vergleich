@@ -6,6 +6,7 @@ date: "2026-03-25"
 category: "Vergleich"
 keywords: ["Sportwetten vs Prediction Markets", "Prediction Market Vergleich", "Sportwetten Alternative", "Quoten Vergleich"]
 readTime: 10
+heroImage: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1200&q=80"
 ---
 
 # Sportwetten vs. Prediction Markets: Der ultimative Vergleich

@@ -6,6 +6,7 @@ date: "2026-03-27"
 category: "Vergleich"
 keywords: ["Quoten Vergleich", "Sportwetten Vergleich", "Beste Sportwetten Quoten", "Wettanbieter Test"]
 readTime: 9
+heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
 ---
 
 # Quoten Vergleich: Welcher Sportwetten-Anbieter bietet die besten Quoten?

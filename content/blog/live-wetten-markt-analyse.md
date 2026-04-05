@@ -6,6 +6,7 @@ date: "2026-03-18"
 category: "Live-Märkte"
 keywords: ["Live Wetten", "Live Sportwetten", "Live Wettmarkt", "In-Play Wetten"]
 readTime: 9
+heroImage: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80"
 ---
 
 # Live-Wetten Analyse: Märkte während des Spiels richtig nutzen
