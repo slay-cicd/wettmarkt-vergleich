@@ -1,5 +1,6 @@
 import { getAllPosts } from '@/lib/posts'
 import ArticleCard from '@/components/ArticleCard'
+import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -45,6 +46,30 @@ export default function HomePage() {
               <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#00ff88', letterSpacing: '-0.02em' }}>{stat.value}</div>
               <div style={{ fontSize: '0.8rem', color: '#4a5568', marginTop: '0.25rem' }}>{stat.label}</div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Tools section */}
+      <section style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ marginBottom: '2rem' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '0.5rem' }}>Kostenlose Rechner & Tools</h2>
+          <p style={{ color: '#718096', fontSize: '0.95rem' }}>Praktische Tools für smarte Sportwetter</p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
+          {[
+            { href: '/tools/margin-rechner', icon: '📊', title: 'Margin-Rechner', desc: 'Berechne die versteckte Buchmacher-Marge aus jeder Quote. Sieh sofort, wie fair eine Quote wirklich ist.' },
+            { href: '/tools/kelly-rechner', icon: '📐', title: 'Kelly-Rechner', desc: 'Optimalen Einsatz mit dem Kelly-Kriterium berechnen — für maximales Kapitalwachstum.' },
+            { href: '/quoten-vergleich', icon: '⚖️', title: 'Quoten-Vergleich', desc: 'Aktuelle Bundesliga-Quoten bei bet365, bwin, Tipico und Atlas Market auf einen Blick.' },
+            { href: '/tools/systemwetten-rechner', icon: '🎯', title: 'Systemwetten-Rechner', desc: '2 aus 3, 3 aus 4 und mehr — alle Kombinationen und möglichen Gewinne sofort berechnen.' },
+            { href: '/anbieter-vergleich', icon: '🏆', title: 'Anbieter-Vergleich', desc: 'Quotenschlüssel, Bonus und Auszahlung aller großen Sportwetten-Anbieter im Direktvergleich.' },
+          ].map(tool => (
+            <Link key={tool.href} href={tool.href} style={{ textDecoration: 'none', display: 'block', background: '#141d35', border: '1px solid #1e2d4a', borderRadius: '14px', padding: '1.5rem', transition: 'border-color 0.15s' }}>
+              <div style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>{tool.icon}</div>
+              <h3 style={{ fontWeight: 700, color: '#ffffff', fontSize: '1.05rem', marginBottom: '0.5rem' }}>{tool.title}</h3>
+              <p style={{ color: '#718096', fontSize: '0.88rem', lineHeight: 1.6 }}>{tool.desc}</p>
+              <div style={{ marginTop: '1rem', color: '#00ff88', fontSize: '0.85rem', fontWeight: 600 }}>Jetzt nutzen →</div>
+            </Link>
           ))}
         </div>
       </section>
