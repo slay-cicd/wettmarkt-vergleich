@@ -43,6 +43,17 @@ export default function LiveWettenPage() {
           Prä-Match-Quoten basieren auf öffentlichen Informationen: Statistiken, Formtabellen, Aufstellungen. Live-Quoten dagegen reagieren auf Spielereignisse in Echtzeit – und dieser Reaktionsprozess ist nicht immer perfekt. Wer schnell denkt und Fußball tief versteht, findet hier Chancen, die es vor dem Anpfiff nicht gibt.
         </p>
 
+          {/* Hero image */}
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '48%', borderRadius: '12px', overflow: 'hidden', background: '#F3F3EE', marginBottom: '2.5rem' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80"
+              alt="Live-Wetten Fußball Bundesliga"
+              loading="lazy"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+
         <div className="article-prose">
 
           <h2>Warum Live-Wetten besondere Chancen bieten</h2>

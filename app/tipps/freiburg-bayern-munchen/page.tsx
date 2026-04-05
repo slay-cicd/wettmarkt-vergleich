@@ -49,6 +49,17 @@ export default function FreiburgBayernPage() {
             SC Freiburg – FC Bayern München: Tipp & Prognose
           </h1>
 
+          {/* Hero image */}
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '52%', borderRadius: '12px', overflow: 'hidden', background: '#F3F3EE', marginBottom: '2rem' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1200&q=80"
+              alt="Fußball Bundesliga Spieltag Wett-Tipp"
+              loading="lazy"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+
           {/* Tipp-Box */}
           <div style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', padding: '1.5rem', marginBottom: '2.5rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', textAlign: 'center' }}>

@@ -84,7 +84,18 @@ export default function Bet365Page() {
             </div>
           </div>
 
-          <div className="article-prose">
+            {/* Hero image */}
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '42%', borderRadius: '12px', overflow: 'hidden', background: '#F3F3EE', marginBottom: '2.5rem' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=1200&q=80"
+              alt="Sportwetten Anbieter Test Bundesliga"
+              loading="lazy"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+
+        <div className="article-prose">
 
             <h2>Quoten: Die beste Note unter den klassischen Buchmachers</h2>
             <p>

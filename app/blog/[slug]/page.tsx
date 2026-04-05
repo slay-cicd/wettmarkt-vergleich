@@ -75,6 +75,17 @@ export default async function BlogPost({ params }: Props) {
       </section>
 
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: '0 1.25rem 4rem' }}>
+        {post.heroImage && (
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '52.5%', borderRadius: '12px', overflow: 'hidden', background: '#F3F3EE', marginBottom: '2rem' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.heroImage}
+              alt={post.title}
+              loading="lazy"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+        )}
         <div className="divider" style={{ marginBottom: '3rem' }} />
         <div className="article-prose" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 

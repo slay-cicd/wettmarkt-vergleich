@@ -19,6 +19,17 @@ export default function ArticleCard({ post, featured = false }: ArticleCardProps
           Empfohlener Artikel
         </p>
         <Link href={`/blog/${post.slug}`} className="group block" style={{ textDecoration: 'none' }} aria-label={`Artikel lesen: ${post.title}`}>
+          {post.heroImage && (
+            <div style={{ position: 'relative', width: '100%', paddingBottom: '42%', borderRadius: '10px', overflow: 'hidden', background: '#F3F3EE', marginBottom: '1.25rem' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={post.heroImage}
+                alt={post.title}
+                loading="lazy"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
+              />
+            </div>
+          )}
           <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem' }}>
             <span className="tag-pill">{post.category}</span>
           </div>
@@ -42,6 +53,17 @@ export default function ArticleCard({ post, featured = false }: ArticleCardProps
   return (
     <article style={{ borderBottom: '1px solid #E5E5E0', paddingBottom: '2rem' }}>
       <Link href={`/blog/${post.slug}`} className="group block" style={{ textDecoration: 'none' }} aria-label={`Artikel lesen: ${post.title}`}>
+        {post.heroImage && (
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '52%', borderRadius: '8px', overflow: 'hidden', background: '#F3F3EE', marginBottom: '1rem' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.heroImage}
+              alt={post.title}
+              loading="lazy"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
+            />
+          </div>
+        )}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
           <span className="tag-pill">{post.category}</span>
         </div>

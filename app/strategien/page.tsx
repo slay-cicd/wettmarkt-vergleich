@@ -93,6 +93,19 @@ export default function StrategienPage() {
         </div>
       </section>
 
+      {/* Hero image */}
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 1.25rem 2rem' }}>
+        <div style={{ position: 'relative', width: '100%', paddingBottom: '38%', borderRadius: '12px', overflow: 'hidden', background: '#F3F3EE' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
+            alt="Sportwetten Strategien Datenanalyse Dashboard"
+            loading="lazy"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </div>
+      </div>
+
       <section style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 1.25rem 6rem' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.25rem' }}>
           {strategies.map(s => (

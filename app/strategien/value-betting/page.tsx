@@ -54,7 +54,18 @@ export default function ValueBettingPage() {
             Die meisten Sportwetter wettten auf Gefühl, auf Favoriten, auf "sichere" Tipps. Das ist kein System – das ist Glücksspiel. Value Betting dagegen ist ein mathematisch fundierter Ansatz, der auf einen Grundsatz reduziert werden kann: Finde Wetten, bei denen die echte Wahrscheinlichkeit größer ist als die Quote impliziert.
           </p>
 
-          <div className="article-prose">
+            {/* Hero image */}
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '48%', borderRadius: '12px', overflow: 'hidden', background: '#F3F3EE', marginBottom: '2.5rem' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80"
+              alt="Value Betting Quoten Analyse"
+              loading="lazy"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+
+        <div className="article-prose">
 
             <h2>Was ist Value Betting?</h2>
             <p>

@@ -53,6 +53,19 @@ export default function TippsPage() {
         </div>
       </section>
 
+      {/* Hero image */}
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 1.25rem 2rem' }}>
+        <div style={{ position: 'relative', width: '100%', paddingBottom: '42%', borderRadius: '12px', overflow: 'hidden', background: '#F3F3EE' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80"
+            alt="Fußball Spieltag Bundesliga Wett-Tipps"
+            loading="lazy"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </div>
+      </div>
+
       <TippsClient />
     </>
   )

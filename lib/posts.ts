@@ -12,6 +12,7 @@ export interface PostMeta {
   category: string
   keywords: string[]
   readTime: number
+  heroImage?: string
 }
 
 export interface Post extends PostMeta {
@@ -35,6 +36,7 @@ export function getAllPosts(): PostMeta[] {
         category: data.category,
         keywords: data.keywords || [],
         readTime: data.readTime || 7,
+        heroImage: data.heroImage || undefined,
       } as PostMeta
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -53,6 +55,7 @@ export function getPostBySlug(slug: string): Post | null {
     category: data.category,
     keywords: data.keywords || [],
     readTime: data.readTime || 7,
+    heroImage: data.heroImage || undefined,
     content,
   }
 }

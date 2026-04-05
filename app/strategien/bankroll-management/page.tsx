@@ -43,6 +43,17 @@ export default function BankrollManagementPage() {
           Du kannst die beste Analyse der Welt haben – wenn du dein Kapital falsch verwaltest, wirst du trotzdem verlieren. Bankroll Management ist das, was zwischen einem kurzen Erlebnis und einer nachhaltigen Sportwetten-Karriere steht. Und es wird von 90% aller Wetter komplett ignoriert.
         </p>
 
+          {/* Hero image */}
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '48%', borderRadius: '12px', overflow: 'hidden', background: '#F3F3EE', marginBottom: '2.5rem' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=1200&q=80"
+              alt="Bankroll Management Geldverwaltung"
+              loading="lazy"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+
         <div className="article-prose">
 
           <h2>Was ist eine Bankroll?</h2>
