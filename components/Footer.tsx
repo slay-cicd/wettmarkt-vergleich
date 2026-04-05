@@ -10,10 +10,19 @@ export default function Footer() {
     { href: 'https://prediction-market-guide.de', label: 'Prediction Market Guide' },
   ]
 
+  const siteLinks = [
+    { href: '/wettanbieter', label: 'Wettanbieter' },
+    { href: '/tipps', label: 'Wett-Tipps' },
+    { href: '/bundesliga-tabelle', label: 'Bundesliga Tabelle' },
+    { href: '/strategien', label: 'Wettstrategien' },
+    { href: '/tools/margin-rechner', label: 'Margin-Rechner' },
+    { href: '/quoten-vergleich', label: 'Quoten-Vergleich' },
+  ]
+
   return (
     <footer className="mt-24 border-t" style={{ borderColor: '#E5E5E0', backgroundColor: '#F3F3EE' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '3rem 1.25rem' }}>
-        <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: '2.5rem', marginBottom: '2.5rem' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-4" style={{ gap: '2.5rem', marginBottom: '2.5rem' }}>
           <div>
             <p className="font-serif" style={{ fontSize: '1rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '0.5rem' }}>
               Wettmarkt Vergleich
@@ -21,6 +30,24 @@ export default function Footer() {
             <p style={{ fontSize: '0.75rem', lineHeight: '1.7', color: '#6B7280' }}>
               Unabhängige Vergleiche von Sportwetten-Märkten, Quoten und Anbietern. Ein Projekt von Atlas Market.
             </p>
+          </div>
+          <div>
+            <p style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: '0.75rem' }}>
+              Inhalte
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              {siteLinks.map(link => (
+                <li key={link.href} style={{ marginBottom: '0.5rem' }}>
+                  <Link
+                    href={link.href}
+                    className="transition-colors duration-200"
+                    style={{ fontSize: '0.75rem', color: '#6B7280', textDecoration: 'none' }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
           <div>
             <p style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: '0.75rem' }}>
