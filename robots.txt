@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://wettmarkt-vergleich.de/sitemap.xml
